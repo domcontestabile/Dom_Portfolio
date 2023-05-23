@@ -29,3 +29,15 @@ Overview:
 - Created a database for a second-hand vinyl store
 - Ordered the store's inventory by price in ascending order
 - Calculated the average price for each vinyl
+
+# [NBA "Player of the Week" Data Dig Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/NBA%20_Player_of_the_Week_Data_Dig)
+
+Objective: Pick a data set or create a data set, and use advanced SELECT queries to discover things about the data.
+
+Programming: SQL
+
+Overview:
+- Calculated the average, maximum, and minimum values for player height, weight, and age
+- Calculated similar statistics per category in the data using HAVING statements
+- Grouped data by transofrming numerical data into categorical data for player height, weight, and age
+- Filtered the data for players that received "player of the week" early and late in their careers using AND/OR statements 
