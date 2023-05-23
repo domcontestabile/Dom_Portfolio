@@ -18,3 +18,14 @@ Overview:
 Datasets: 
 - [COVIDTrackingApr2020_Dec2020.csv](https://github.com/domcontestabile/Dom_Portfolio/files/11547347/COVIDTrackingApr2020_Dec2020.csv) 
 - [state_info.csv](https://github.com/domcontestabile/Dom_Portfolio/files/11547349/state_info.csv)
+
+# Second-hand Vinyl Store Database Project
+
+Objective: Create a hypothetical store that specializes in selling one type of thing, such as clothing or bikes. Create a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. You should sell at least 15 items, and use SELECT statements to order your items by price and show at least one statistic about the items.
+
+Programming: SQL
+
+Overview:  
+- Created a database for a second-hand vinyl store
+- Ordered the store's inventory by price in ascending order
+- Calculated the average price for each vinyl
