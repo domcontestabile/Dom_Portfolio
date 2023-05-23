@@ -1,0 +1,181 @@
+/*************************************************
+	BIOSTAT691F	Project Code:
+	COVID-19 State-level Changes during 2020		
+	Dom Contestabile			
+**************************************************/
+
+libname epi 'C:\Users\dcontestabil\Downloads';
+
+proc format;
+	value approach 
+	0="delayed"
+	1= "early";
+run;
+proc format;
+	value monthfmt 
+	4=April
+	12=December;
+run;
+
+proc import out=epi.state
+	datafile= "C:\Users\dcontestabil\Downloads\state_info.csv"
+	dbms=csv REPLACE;
+	getnames=YES;
+run;
+
+proc import out=epi.tracking
+	datafile= "C:\Users\dcontestabil\Downloads\COVIDTrackingApr2020_Dec2020.csv"
+	dbms=csv REPLACE;
+	getnames=YES;
+run;
+	
+data tracking;
+	set epi.tracking;
+	label state = "state or DC"; label date= "Date (ranges from 01Apr2020 ñ 31Dec2020)";
+	label death= "Daily number of deaths recorded with confirmed or probable
+	COVID diagnoses"; label hospitalized= "Daily number of hospitalized residents recorded with COVID
+	diagnoses"; label positive= "Daily number of COVID positive residents recorded";
+	run;
+data state;
+	set epi.state;
+	label state= "state or DC"; label reopen= "distance restrictions relaxed"; 
+	label pop="Number of residents as per 2010 census";
+	run;
+
+proc format;
+value positivef 0-49999= "less than 50k"
+				50000-high= "greater than 50k";
+proc format;
+value reopenfmt 0= "delayed"
+				1= "early";
+
+*******Merging/Appending ********;
+
+proc sort 
+	data = epi.tracking;
+	by state;
+	run;
+
+proc sort 
+	data = epi.state;
+	by state;
+	run;
+
+data epi.merged_data;
+	merge epi.state (in = instate) epi.tracking;
+	by state;
+	if instate;
+	run;
+
+data epi.merged_data;
+set epi.merged_data;
+	month = month(date);
+	run;
+
+data merged_data;
+set epi.merged_data;
+	if month=4 then OUTPUT;
+	if month=12 then OUTPUT;
+	run;
+
+proc print data=merged_data; run;
+
+*****************"roll up"***********************;
+
+/* Serial by STATE and MONTH
+- sum each of the COVID metrics (positive cases, hospitalizations, deaths) across days within each of the two months  within each state
+derive for each month within each state:
+- per capita rates for each of the COVID metrics (= 100,000 *(metric/population) rounded to the second decimal place)
+- case hospitalization rate (CHR = 100 * (hospitalizations / positive cases) rounded to the second decimal place)
+- Keep the following variables: state, month, reopen status, per capita COVID metrics, and CHR
+
+Serial by STATE
+-Transpose the STATE/MONTH dataset such that there are new variables for CHR in specific months
+-Calculate the change (= December - April)
+Keep the following variables: state, CHR in April, CHR in December, change in CHR */
+
+proc sort data=merged_data;
+BY state month; run;
+
+data merged_data2; set merged_data;
+	by state month;  *summing total positives by state;
+	retain totalp; 
+	if FIRST.month then totalp=.;
+	totalp = sum(totalp, positive);
+
+	retain totalh; *summing total hospitalizations by state;
+	if FIRST.month then totalh=.;
+	totalh = sum(totalh, hospitalized);
+
+	retain totald; *summing total deaths by state;
+	if FIRST.month then totald=.;
+	totald = sum(totald, death);
+	
+	RETAIN per_capita_p; RETAIN per_capita_d; RETAIN per_capita_h;
+	per_capita_p= 100000 *(totalp/POP);
+			per_capita_p = round (per_capita_p, 0.01);
+	per_capita_d= 100000 *(totald/POP);
+			per_capita_d = round (per_capita_d, 0.01);
+	per_capita_h= 100000 *(totalh/POP);
+			per_capita_h = round (per_capita_h, 0.01);
+
+	retain CHR;
+	if FIRST.month then CHR=.;
+	CHR = 100 * (totalh / totalp);
+	CHR = round (CHR, 0.01);
+	if LAST.month then OUTPUT;
+
+	run;
+data epi.COVID_state; set merged_data2; 
+	KEEP state month reopen per_capita_p per_capita_h per_capita_d CHR;
+	run;
+proc print data=epi.COVID_state; run;
+
+data epi.COVID_stateandmonth; set merged_data2;
+BY state month;
+RETAIN CHR_april;
+RETAIN CHR_dec;
+RETAIN CHR_change;
+IF first.state THEN CHR_april=CHR;
+IF last.state then DO;
+	CHR_dec=CHR;
+	CHR = 100 * (totalh / totalp);
+	CHR_change = (CHR_dec - CHR_april);
+	OUTPUT;
+	END;
+KEEP state CHR_april CHR_dec CHR_change;
+run;
+
+proc print data=epi.COVID_stateandmonth; run;
+
+/***************************** ANALYSIS ASSIGNMENT **********************************
+
+Summary:
+Using the COVID tracking data, provide summary statistics across all states / DC for the following:
+
+- Per capita positive cases in the early vs. delayed reopening states for both April and December.
+- Case hospitalization rates in April, December, and the change from April to December
+Make sure all output is clearly labelled / titled. */
+
+****format/labels for the tables*****;
+
+proc format;
+value percap_posfmt 0= "delayed"
+					1= "early"; run;
+
+data epi.COVID_state;
+set epi.COVID_state;
+	format month monthfmt.;
+	format reopen approach.;
+	run;
+proc sort data = epi.COVID_state; by month reopen; run;
+
+*this gives us 4 different tables, for each reopen status (0, 1) and month (4, 12);
+*****************FINAL PROC MEANS FOR PER CAPITA, WORKS WITH FORMATS APPLIED************;
+proc means 
+	data = epi.COVID_state;
+	title1 "Summary of Per Capita Positives by Re-Open Status and Month";
+	title2 "PROC MEANS";
+	var per_capita_p;
+	by month reopen;
+	run;
