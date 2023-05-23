@@ -5,6 +5,8 @@ Data analysis and statistics portfolio containing past projects that demonstrate
 
 Objective: Compare the trajectory of positive cases between states that aggressively relaxed distancing restrictions in mid-May 2020 and states that delayed such measures. Assess whether there were changes in the case hospitalization rate (CHR) from early in the pandemic to later, considering potential factors such as underlying severity and/or the evolution of clinical management.
 
+Programming: SAS
+
 Overview:
 - Calculated descriptive statistics and a box plot for the number of positive cases per capita by time (April vs. December) and re-opening approach (early vs. delayed)
 - Computed a mixed effect regression model of positive cases per capita (100,000 cases/population) on re-opening approach treating state/DC as a random subject effect in the repeated statement using maximum likelihood estimation and an unstructured covariance structure
