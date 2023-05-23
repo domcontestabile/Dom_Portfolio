@@ -1,0 +1,25 @@
+CREATE TABLE second_hand_vinyls (id INTEGER PRIMARY KEY, artist TEXT, album TEXT, year INTEGER, genre TEXT, condition TEXT, price INTEGER);
+
+INSERT INTO second_hand_vinyls VALUES (1, "Depeche Mode", "Violator", 1990, "Synth-Pop", "Like new", 20);
+INSERT INTO second_hand_vinyls VALUES (2, "Duran Duran", "Rio", 1982, "Synth-Pop", "Used", 12);
+INSERT INTO second_hand_vinyls VALUES (3, "Black Sabbath", "Paranoid", 1970, "Metal", "Like new", 34);
+INSERT INTO second_hand_vinyls VALUES (4, "The Rolling Stones", "Aftermath", 1966, "Rock", "Very used", 25);
+INSERT INTO second_hand_vinyls VALUES (5, "The Beatles", "Abbey Road", 1969, "Rock", "Used", 40);
+INSERT INTO second_hand_vinyls VALUES (6, "Queen", "News of the World", 1977, "Rock", "Used", 18);
+INSERT INTO second_hand_vinyls VALUES (7, "Beach Boys", "Surfin' USA", 1963, "Rock", "Like new", 38);
+INSERT INTO second_hand_vinyls VALUES (8, "Marvin Gaye", "Let's Get It On", 1973, "R & B", "Very used", 10);
+INSERT INTO second_hand_vinyls VALUES (9, "Stevie Wonder", "Hotter than July", 1980, "R & B", "Like new", 40);
+INSERT INTO second_hand_vinyls VALUES (10, "Lionel Richie", "Dancing on the Ceiling", 1986, "R & B", "Very used", 8);
+INSERT INTO second_hand_vinyls VALUES (11, "Bee Gees", "Saturday Night Fever", 1977, "Pop", "Like new", 55);
+INSERT INTO second_hand_vinyls VALUES (12, "ABBA", "Arrival", 1976, "Pop", "Used", 28);
+INSERT INTO second_hand_vinyls VALUES (13, "112", "112", 1996, "Hip hop", "Like new", 37);
+INSERT INTO second_hand_vinyls VALUES (14, "Mace", "Harlem World", 1997, "Hip hop", "Used", 24);
+INSERT INTO second_hand_vinyls VALUES (15, "Biggie Smalls", "Life After Death", 1997, "Hip hop", "Very used", 30);
+
+/*Ordering albums by price from least to greatest*/
+SELECT * FROM second_hand_vinyls 
+    ORDER BY price;
+
+/*Calculating the average vinyl price*/
+SELECT AVG(Price) 
+    FROM second_hand_vinyls;
