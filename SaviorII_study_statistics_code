@@ -1,0 +1,819 @@
+*------------------------------*
+|     Savior II Results        |
+|							                 | 
+| Programmer: Dom Contestabile |
+*------------------------------*;
+
+*creating library*;
+libname sas
+'C:\Users\dcontest\OneDrive - Highmark Health\SAS';
+
+*importing polymets_data*;
+proc import out=sas.saviorII
+datafile='C:\Users\dcontest\OneDrive - Highmark Health\SAS\saviorII.xlsx'
+	dbms=xlsx replace;
+run;
+
+*moving saviorII data to work library*;
+data work.saviorII;
+	set sas.saviorII;
+run;
+
+*inspecting file contents*;
+proc print data=saviorII (obs=20);
+run;
+
+*labeling values for each variable*;
+proc format library=sas.formats;
+		value clinical_eventx 		 0 = "No"
+							 		 1 = "Yes";
+		value one_or_more_drugsx	 0 = "No"
+									 1 = "Yes";
+		value O2_at_dischargex 		 0 = "No"
+									 1 = "Yes";
+		value _30_day_readmissionx   0 = "No"
+									 1 = "Yes";
+run;
+
+*tells SAS where to look for formats*;
+options fmtsearch=(sas.formats);
+
+data saviorII;
+	set saviorII;
+	format clinical_event clinical_eventx.
+		   one_or_more_drugs one_or_more_drugsx.
+		   O2_at_discharge O2_at_dischargex.
+		   _30_day_readmission _30_day_readmissionx.;
+run;
+
+*** STATISTICAL ANALYSES ***;
+
+*Correlation test for age and PaO2/FiO2 ratio*;
+proc corr data=saviorII;
+	var Age PaO2_FiO2_ratio;
+run;
+*there is no statistically significant correlation between age and PaO2/FiO2 ratio (r=0.26, p=0.5750)*;
+
+*Fisher's exact test for clinical event (using Fisher's exact test due to low cell counts)*;
+proc freq data=saviorII;
+	table Treatment_arm*clinical_event / fisher;
+run;
+*Fisher's exact test = 0.6351 --> NOT significant*;
+
+*Fisher's exact test for each COVID drug*;
+proc freq data=saviorII;
+	table Treatment_arm*Dexamethasone / fisher;
+run; *NOT SIG*;
+
+proc freq data=saviorII;
+	table Treatment_arm*Convalescent_plasma / fisher;
+run; *NOT SIG*;
+
+proc freq data=saviorII;
+	table Treatment_arm*Remdesivir / fisher;
+run; *NOT SIG*;
+
+proc freq data=saviorII;
+	table Treatment_arm*Tociluzimab / fisher;
+run; *NOT SIG*;
+
+proc freq data=saviorII;
+	table Treatment_arm*one_or_more_drugs / fisher;
+run; *NOT SIG*;
+
+*Fisher's exact test for supplemental O2 at DX*;
+proc freq data=saviorII;
+	table Treatment_arm*O2_at_discharge / fisher;
+run; *NOT SIG*;
+
+*Wilcoxon sum rank test for LOS*;
+proc NPAR1WAY data=saviorII wilcoxon;
+	title "Nonparametric test to compare LOS (days) between treatment and control";
+	class Treatment_arm;
+	var LOS_days;
+	exact wilcoxon;
+run;
+*The p-value = 1.0000 (>0.05) for a two-sided (nondirectional) test. Since p-value is greater than 
+ 0.05 we conclude that the LOS between treatment & control groups areas are NOT significantly different*;
+
+*Wilcoxon sum rank test for difference in SpO2*;
+proc NPAR1WAY data=saviorII wilcoxon;
+	title "Nonparametric test to compare SPO2 difference (initial & discharge) between treatment and control";
+	class Treatment_arm;
+	var SpO2_diff;
+	exact wilcoxon;
+run;
+*The p-value = 0.3199 (>0.05) for a two-sided (nondirectional) test. Since p-value is greater than 
+ 0.05 we conclude that the difference in SpO2 between treatment & control groups areas are NOT significantly different*;
+
+*Wilcoxon sum rank test for PaO2_FiO2_ratio*;
+proc NPAR1WAY data=saviorII wilcoxon;
+	title "Nonparametric test to compare PaO2_FiO2_ratios between treatment and control";
+	class Treatment_arm;
+	var PaO2_FiO2_ratio;
+run;
+*The p-value = 0.0571 (>0.05) for a two-sided (nondirectional) test. Since p-value is greater than 
+ 0.05 we conclude that the PaO2_FiO2_ratios between treatment & control groups areas are NOT significantly different
+Kruskal-Wallis Test: X^2 = 4.5000, DF = 1, p-val = 0.0339*;
+
+*************************************DIFFERENCES IN LEVELS*************************************
+
+*Wilcoxon sum rank test for difference in SpO2*;
+proc NPAR1WAY data=saviorII wilcoxon;
+	title "Nonparametric test to compare difference in SpO2 between treatment and control";
+	class Treatment_arm;
+	var SpO2_diff;
+	exact wilcoxon;
+run;
+*The p-value = 0.3199 (>0.05) for a two-sided (nondirectional) test. Since p-value is greater than 
+ 0.05 we conclude that the Pdifference in SpO2 between treatment & control groups areas are NOT significantly different*;
+
+*Wilcoxon sum rank test for difference in CRP*;
+proc NPAR1WAY data=saviorII wilcoxon;
+	title "Nonparametric test to compare difference in CRP between treatment and control";
+	class Treatment_arm;
+	var CRP_diff;
+	exact wilcoxon;
+run;
+*The p-value = 0.5573 (>0.05) for a two-sided (nondirectional) test. Since p-value is greater than 
+ 0.05 we conclude that the Pdifference in CRP between treatment & control groups areas are NOT significantly different*;
+
+*Wilcoxon sum rank test for difference in Ferritin*;
+proc NPAR1WAY data=saviorII wilcoxon;
+	title "Nonparametric test to compare difference in Ferritin between treatment and control";
+	class Treatment_arm;
+	var Ferritin_diff;
+	exact wilcoxon;
+run;
+*The p-value = 0.5573 (>0.05) for a two-sided (nondirectional) test. Since p-value is greater than 
+ 0.05 we conclude that the Pdifference in Ferritin between treatment & control groups areas are NOT significantly different*;
+
+*Wilcoxon sum rank test for difference in D_Dimer*;
+proc NPAR1WAY data=saviorII wilcoxon;
+	title "Nonparametric test to compare difference in D_Dimer between treatment and control";
+	class Treatment_arm;
+	var D_Dimer_diff;
+	exact wilcoxon;
+run;
+*The p-value = 0.1906 (>0.05) for a two-sided (nondirectional) test. Since p-value is greater than 
+ 0.05 we conclude that the Pdifference in D_Dimer between treatment & control groups areas are NOT significantly different*;
+
+*Wilcoxon sum rank test for difference in ProCalcitonin*;
+proc NPAR1WAY data=saviorII wilcoxon;
+	title "Nonparametric test to compare difference in ProCalcitonin between treatment and control";
+	class Treatment_arm;
+	var ProCalcitonin_diff;
+	exact wilcoxon;
+run;
+*The p-value = 0.7960 (>0.05) for a two-sided (nondirectional) test. Since p-value is greater than 
+ 0.05 we conclude that the Pdifference in D_Dimer between treatment & control groups areas are NOT significantly different*;
+
+
+
+**************************************CORRECTED STATS --> USING PARAMETRIC TEST*************************************;
+
+
+*Test for normality and produce confidence intervals on the median;
+proc univariate data=saviorII normal cipctldf;
+class Treatment_arm;
+var PaO2_FiO2_ratio;
+histogram PaO2_FiO2_ratio /normal;
+qqplot /normal (mu=est sigma=est);
+run;
+*both p-values for treatment (Shapiro-Wilk = 0.4954) and control (Shapiro-Wilk = 0.6850) are >0.05, so we refuse 
+to reject the null and we conclude the data is not normally distributed??? what test to use then?
+
+*Produce descriptive statistics;
+proc means data=saviorII n nmiss mean std stderr median min max qrange maxdec=2; *maxdec specifies the number of decimal places for the statistics*;
+class Treatment_arm;
+var PaO2_FiO2_ratio;
+run;
+
+*Test for normality;
+proc univariate data=saviorII normal;
+class Treatment_arm;
+var PaO2_FiO2_ratio;
+run; 
+*both p-values for treatment (Shapiro-Wilk = 0.4954) and control (Shapiro-Wilk = 0.6850) are >0.05, so we refuse 
+to reject the null and we conclude the data is normally distributed;
+
+*Test for equality of variances;
+proc glm data=saviorII;
+class Treatment_arm;
+model PaO2_FiO2_ratio = Treatment_arm;
+means Treatment_arm / hovtest=levene(type=abs) welch;
+run;
+*Levene’s Test for Equality of Variances shows a p-value of 0.1935. A non-significant p-value (P > 0.05) 
+indicates that a pooled t-test results should be used instead of a Satterthwaite (also known as Welch’s);
+
+*Independent Samples T-test;
+proc ttest data=saviorII;
+class Treatment_arm;
+var PaO2_FiO2_ratio;
+run;
+*We have concluded that the pooled results of the independent sample t-test are appropriate since our variances are 
+considered equal between the treatment and control groups. A p-value of 0.0109 indicates that we should reject the 
+null hypothesis that the mean PaO2/FiO2 ratio is equal across the treatment and control groups and conclude that 
+there is a mean difference. We know that the average difference between the treatment and control groups for this 
+sample is 130.8. That is to say, the treatment group PaO2/FiO2 ratio is, on average, 130.8 higher than the control 
+group. We are 95% certain that the mean difference between the treatment and control groups across the population 
+will be between 45.5 & 216.0.;
+
+*LOS in hours T-test;
+*Test for normality;
+proc univariate data=saviorII normal;
+class Treatment_arm;
+var LOS_days;
+run; 
+*data is NOT normally distributed EVEN without major outlier (1,498 hours);
+
+*Wilcoxon sum rank;
+proc NPAR1WAY data=saviorII wilcoxon;
+	title "Nonparametric test to compare difference in LOS_days between treatment and control";
+	class Treatment_arm;
+	var LOS_days;
+	exact wilcoxon;
+run;
+*p=0.7103 / NOT SIGNIFICANT;
+
+
+*****Creating Table 1 patient descriptive statistics - lines 242-819*****;
+
+*doubling the data to create an overall column*;
+data saviorII;
+	set work.saviorII;output;
+	Treatment_arm=9;output;
+run;
+
+*CONTINUOUS VARIABLE (Age) statistics*;
+proc sort data=work.saviorII out=saviorII;by Treatment_arm;run;
+proc summary data=work.saviorII;
+by Treatment_arm;
+var Age;
+output out=Age1 n=_n mean=_mean std=_std median=_mdn min=_mn max=_mx;
+run;
+
+*creating new Age table with output stats WITHIN columns*;
+data Age2;
+	set Age1;
+	meansd=put(_mean,4.1)||'('||put(_std,5.2)||')';
+	mnmx=put(_mn,3.0)||','||put(_mx,3.0);
+	median=put(_mdn,4.1);
+	n=put(_n,3.0);
+	drop _:;
+run;
+
+*refining the labels for each descriptive stat*;
+proc transpose data=Age2 out=Age3;
+	id Treatment_arm;
+	var N meansd median mnmx;
+run;
+
+data Age4;
+	length newvar $ 30.;
+	set Age3;
+	if _name_='n' then newvar=' N';
+	else if _name_='meansd' then newvar=' Mean(SD)';
+	else if _name_='median' then newvar=' Median';
+	else if _name_='mnmx' then newvar=' Min,Max';
+	drop _name_;
+run;
+
+*labeling the variable itself*;
+data dummy;
+	length newvar $ 30.;
+	newvar='Age(years)';
+run;
+
+*combining data sets*;
+data Age;
+	set dummy Age4;
+	ord=1;
+run;
+
+*CATEGORICAL VARIABLE (Sex) statistics*;
+proc freq data=saviorII noprint;
+	by Treatment_arm;
+	table sex/out=sex1;
+run;
+
+*creating new LOS table with output stats WITHIN columns*;
+data sex2;
+	set sex1;
+	np=put(count,3.0)||'('||put(percent,4.1)||')';
+run;
+
+*refining the labels for each descriptive stat*;
+proc sort data=sex2; by sex; run;
+proc transpose data=sex2 out=sex3;
+	id Treatment_arm;
+	var np;
+	by sex;
+run;
+
+data sex4;
+	length newvar $ 30.;
+	set sex3;
+	if sex='Male' then newvar=' Male'; *if variables are already formatted, you have to reformat them here to align with columns*;
+	else if sex='Female' then newvar=' Female';
+	drop sex;
+run;
+
+*labeling the variable itself*;
+data dummy;
+	length newvar $ 30.;
+	newvar='Sex [n(%)]';
+run;
+
+*combining data sets*;
+data sex;
+	set dummy sex4;
+	ord=2;
+run;
+
+*CONTINUOUS VARIABLE (LOS) statistics*;
+proc sort data=work.saviorII out=saviorII;by Treatment_arm;run;
+proc summary data=work.saviorII;
+by Treatment_arm;
+var LOS_days;
+output out=LOS1 n=_n mean=_mean std=_std median=_mdn min=_mn max=_mx;
+run;
+
+*creating new LOS table with output stats WITHIN columns*;
+data LOS2;
+	set LOS1;
+	meansd=put(_mean,4.1)||'('||put(_std,5.2)||')';
+	mnmx=put(_mn,3.0)||','||put(_mx,3.0);
+	median=put(_mdn,4.1);
+	n=put(_n,3.0);
+	drop _:;
+run;
+
+*refining the labels for each descriptive stat*;
+proc transpose data=LOS2 out=LOS3;
+	id Treatment_arm;
+	var N meansd median mnmx;
+run;
+
+data LOS4;
+	length newvar $ 30.;
+	set LOS3;
+	if _name_='n' then newvar=' N';
+	else if _name_='meansd' then newvar=' Mean(SD)';
+	else if _name_='median' then newvar=' Median';
+	else if _name_='mnmx' then newvar=' Min,Max';
+	drop _name_;
+run;
+
+*labeling the variable itself*;
+data dummy;
+	length newvar $ 30.;
+	newvar='LOS(days)';
+run;
+
+*combining data sets*;
+data LOS;
+	set dummy LOS4;
+	ord=3;
+run;
+
+*CATEGORICAL VARIABLE (Dexamethasone) statistics*;
+proc freq data=saviorII noprint;
+	by Treatment_arm;
+	table Dexamethasone/out=Dex1;
+run;
+
+*creating new LOS table with output stats WITHIN columns*;
+data Dex2;
+	set Dex1;
+	np=put(count,3.0)||'('||put(percent,4.1)||')';
+run;
+
+*refining the labels for each descriptive stat*;
+proc sort data=Dex2; by Dexamethasone; run;
+proc transpose data=Dex2 out=Dex3;
+	id Treatment_arm;
+	var np;
+	by Dexamethasone;
+run;
+
+data Dex4;
+	length newvar $ 30.;
+	set Dex3;
+	if Dexamethasone=0 then newvar=' No'; *if variables are already formatted, you have to reformat them here to align with columns*;
+	else if Dexamethasone=1 then newvar=' Yes';
+	drop Dexamethasone;
+run;
+
+*labeling the variable itself*;
+data dummy;
+	length newvar $ 30.;
+	newvar='Dexamethasone [n(%)]';
+run;
+
+*combining data sets*;
+data Dex;
+	set dummy Dex4;
+	ord=4;
+run;
+
+*CATEGORICAL VARIABLE (Convalescent_plasma) statistics*;
+proc freq data=saviorII noprint;
+	by Treatment_arm;
+	table Convalescent_plasma/out=Con1;
+run;
+
+*creating new table with output stats WITHIN columns*;
+data Con2;
+	set Con1;
+	np=put(count,3.0)||'('||put(percent,4.1)||')';
+run;
+
+*refining the labels for each descriptive stat*;
+proc sort data=Con2; by Convalescent_plasma; run;
+proc transpose data=Con2 out=Con3;
+	id Treatment_arm;
+	var np;
+	by Convalescent_plasma;
+run;
+
+data Con4;
+	length newvar $ 30.;
+	set Con3;
+	if Convalescent_plasma=0 then newvar=' No'; *if variables are already formatted, you have to reformat them here to align with columns*;
+	else if Convalescent_plasma=1 then newvar=' Yes';
+	drop Convalescent_plasma;
+run;
+
+*labeling the variable itself*;
+data dummy;
+	length newvar $ 30.;
+	newvar='Convalescent_plasma [n(%)]';
+run;
+
+*combining data sets*;
+data Confinal;
+	set dummy Con4;
+	ord=5;
+run;
+
+*CATEGORICAL VARIABLE (Remdesivir) statistics*;
+proc freq data=saviorII noprint;
+	by Treatment_arm;
+	table Remdesivir/out=Rem1;
+run;
+
+*creating new table with output stats WITHIN columns*;
+data Rem2;
+	set Rem1;
+	np=put(count,3.0)||'('||put(percent,4.1)||')';
+run;
+
+*refining the labels for each descriptive stat*;
+proc sort data=Rem2; by Remdesivir; run;
+proc transpose data=Rem2 out=Rem3;
+	id Treatment_arm;
+	var np;
+	by Remdesivir;
+run;
+
+data Rem4;
+	length newvar $ 30.;
+	set Rem3;
+	if Remdesivir=0 then newvar=' No'; *if variables are already formatted, you have to reformat them here to align with columns*;
+	else if Remdesivir=1 then newvar=' Yes';
+	drop Remdesivir;
+run;
+
+*labeling the variable itself*;
+data dummy;
+	length newvar $ 30.;
+	newvar='Remdesivir [n(%)]';
+run;
+
+*combining data sets*;
+data Rem;
+	set dummy Rem4;
+	ord=6;
+run;
+
+*CATEGORICAL VARIABLE (Tociluzimab) statistics*;
+proc freq data=saviorII noprint;
+	by Treatment_arm;
+	table Tociluzimab/out=Toc1;
+run;
+
+*creating new table with output stats WITHIN columns*;
+data Toc2;
+	set Toc1;
+	np=put(count,3.0)||'('||put(percent,4.1)||')';
+run;
+
+*refining the labels for each descriptive stat*;
+proc sort data=Toc2; by Tociluzimab; run;
+proc transpose data=Toc2 out=Toc3;
+	id Treatment_arm;
+	var np;
+	by Tociluzimab;
+run;
+
+data Toc4;
+	length newvar $ 30.;
+	set Toc3;
+	if Tociluzimab=0 then newvar=' No'; *if variables are already formatted, you have to reformat them here to align with columns*;
+	else if Tociluzimab=1 then newvar=' Yes';
+	drop Tociluzimab;
+run;
+
+*labeling the variable itself*;
+data dummy;
+	length newvar $ 30.;
+	newvar='Tociluzimab [n(%)]';
+run;
+
+*combining data sets*;
+data Toc;
+	set dummy Toc4;
+	ord=7;
+run;
+
+*CATEGORICAL VARIABLE (one_or_more_drug) statistics*;
+proc freq data=saviorII noprint;
+	by Treatment_arm;
+	table more_than_one_drug/out=multiple_drugs1;
+run;
+
+*creating new table with output stats WITHIN columns*;
+data multiple_drugs2;
+	set multiple_drugs1;
+	np=put(count,3.0)||'('||put(percent,4.1)||')';
+run;
+
+*refining the labels for each descriptive stat*;
+proc sort data=multiple_drugs2; by more_than_one_drug; run;
+proc transpose data=multiple_drugs2 out=multiple_drugs3;
+	id Treatment_arm;
+	var np;
+	by more_than_one_drug;
+run;
+
+data multiple_drugs4;
+	length newvar $ 30.;
+	set multiple_drugs3;
+	if more_than_one_drug=0 then newvar=' No'; *if variables are already formatted, you have to reformat them here to align with columns*;
+	else if more_than_one_drug=1 then newvar=' Yes';
+	drop more_than_one_drug;
+run;
+
+*labeling the variable itself*;
+data dummy;
+	length newvar $ 30.;
+	newvar='more_than_one_drug [n(%)]';
+run;
+
+*combining data sets*;
+data multiple_drugs;
+	set dummy multiple_drugs4;
+	ord=8;
+run;
+
+*CATEGORICAL VARIABLE (Ventilation) statistics*;
+proc freq data=saviorII noprint;
+	by Treatment_arm;
+	table Ventilation/out=Vent1;
+run;
+
+*creating new table with output stats WITHIN columns*;
+data Vent2;
+	set Vent1;
+	np=put(count,3.0)||'('||put(percent,4.1)||')';
+run;
+
+*refining the labels for each descriptive stat*;
+proc sort data=Vent2; by Ventilation; run;
+proc transpose data=Vent2 out=Vent3;
+	id Treatment_arm;
+	var np;
+	by Ventilation;
+run;
+
+data Vent4;
+	length newvar $ 30.;
+	set Vent3;
+	if Ventilation=0 then newvar=' No'; *if variables are already formatted, you have to reformat them here to align with columns*;
+	else if Ventilation=1 then newvar=' Yes';
+	drop Ventilation;
+run;
+
+*labeling the variable itself*;
+data dummy;
+	length newvar $ 30.;
+	newvar='Ventilation [n(%)]';
+run;
+
+*combining data sets*;
+data Vent;
+	set dummy Vent4;
+	ord=9;
+run;
+
+*CONTINUOUS VARIABLE (PaO2_FiO2_ratio) statistics*;
+proc sort data=work.saviorII out=saviorII;by Treatment_arm;run;
+proc summary data=work.saviorII;
+by Treatment_arm;
+var PaO2_FiO2_ratio;
+output out=PaO2_FiO2_ratio1 n=_n mean=_mean std=_std median=_mdn min=_mn max=_mx;
+run;
+
+*creating new PaO2_FiO2_ratio table with output stats WITHIN columns*;
+data PaO2_FiO2_ratio2;
+	set PaO2_FiO2_ratio1;
+	meansd=put(_mean,4.1)||'('||put(_std,5.2)||')';
+	mnmx=put(_mn,3.0)||','||put(_mx,3.0);
+	median=put(_mdn,4.1);
+	n=put(_n,3.0);
+	drop _:;
+run;
+
+*refining the labels for each descriptive stat*;
+proc transpose data=PaO2_FiO2_ratio2 out=PaO2_FiO2_ratio3;
+	id Treatment_arm;
+	var N meansd median mnmx;
+run;
+
+data PaO2_FiO2_ratio4;
+	length newvar $ 30.;
+	set PaO2_FiO2_ratio3;
+	if _name_='n' then newvar=' N';
+	else if _name_='meansd' then newvar=' Mean(SD)';
+	else if _name_='median' then newvar=' Median';
+	else if _name_='mnmx' then newvar=' Min,Max';
+	drop _name_;
+run;
+
+*labeling the variable itself*;
+data dummy;
+	length newvar $ 30.;
+	newvar='PaO2_FiO2_ratio';
+run;
+
+*combining data sets*;
+data PaO2_FiO2_ratio;
+	set dummy PaO2_FiO2_ratio4;
+	ord=10;
+run;
+
+*CONTINUOUS VARIABLE (PF_ratio_daa) statistics*;
+proc sort data=work.saviorII out=saviorII;by Treatment_arm;run;
+proc summary data=work.saviorII;
+by Treatment_arm;
+var PF_ratio_daa;
+output out=PF_ratio_daa1 n=_n mean=_mean std=_std median=_mdn min=_mn max=_mx;
+run;
+
+*creating new PF_ratio_daa table with output stats WITHIN columns*;
+data PF_ratio_daa2;
+	set PF_ratio_daa1;
+	meansd=put(_mean,4.1)||'('||put(_std,5.2)||')';
+	mnmx=put(_mn,3.0)||','||put(_mx,3.0);
+	median=put(_mdn,4.1);
+	n=put(_n,3.0);
+	drop _:;
+run;
+
+*refining the labels for each descriptive stat*;
+proc transpose data=PF_ratio_daa2 out=PF_ratio_daa3;
+	id Treatment_arm;
+	var N meansd median mnmx;
+run;
+
+data PF_ratio_daa4;
+	length newvar $ 30.;
+	set PF_ratio_daa3;
+	if _name_='n' then newvar=' N';
+	else if _name_='meansd' then newvar=' Mean(SD)';
+	else if _name_='median' then newvar=' Median';
+	else if _name_='mnmx' then newvar=' Min,Max';
+	drop _name_;
+run;
+
+*labeling the variable itself*;
+data dummy;
+	length newvar $ 30.;
+	newvar='PF_ratio_daa(days)';
+run;
+
+*combining data sets*;
+data PF_ratio_daa;
+	set dummy PF_ratio_daa4;
+	ord=11;
+run;
+
+*CATEGORICAL VARIABLE (supplemental O2) statistics*;
+proc freq data=saviorII noprint;
+	by Treatment_arm;
+	table supplemental_O2_cat/out=O2_supp1;
+run;
+
+*creating new LOS table with output stats WITHIN columns*;
+data O2_supp2;
+	set O2_supp1;
+	np=put(count,3.0)||'('||put(percent,4.1)||')';
+run;
+
+*refining the labels for each descriptive stat*;
+proc sort data=O2_supp2; by supplemental_O2_cat; run;
+proc transpose data=O2_supp2 out=O2_supp3;
+	id Treatment_arm;
+	var np;
+	by supplemental_O2_cat;
+run;
+
+data O2_supp4;
+	length newvar $ 30.;
+	set O2_supp3;
+	if supplemental_O2_cat='NC' then newvar=' NC'; *if variables are already formatted, you have to reformat them here to align with columns*;
+	else if supplemental_O2_cat='BiPAP' then newvar=' BiPAP';
+	else if supplemental_O2_cat='HFNC' then newvar=' HFNC';
+	else if supplemental_O2_cat='Opti' then newvar=' Opti';
+	else if supplemental_O2_cat='Mechanical' then newvar=' Mechanical';
+	else if supplemental_O2_cat='Room_air' then newvar=' Room_air';
+	drop supplemental_O2_cat;
+run;
+
+*labeling the variable itself*;
+data dummy;
+	length newvar $ 30.;
+	newvar='O2_supplementation [n(%)]';
+run;
+
+*combining data sets*;
+data O2_supp;
+	set dummy O2_supp4;
+	ord=12;
+run;
+
+*CATEGORICAL VARIABLE (discharge O2) statistics*;
+proc freq data=saviorII noprint;
+	by Treatment_arm;
+	table O2_at_discharge/out=O2_discharge1;
+run;
+
+*creating new LOS table with output stats WITHIN columns*;
+data O2_discharge2;
+	set O2_discharge1;
+	np=put(count,3.0)||'('||put(percent,4.1)||')';
+run;
+
+*refining the labels for each descriptive stat*;
+proc sort data=O2_discharge2; by O2_at_discharge; run;
+proc transpose data=O2_discharge2 out=O2_discharge3;
+	id Treatment_arm;
+	var np;
+	by O2_at_discharge;
+run;
+
+data O2_discharge4;
+	length newvar $ 30.;
+	set O2_discharge3;
+	if O2_at_discharge=0 then newvar=' No'; 
+	else if O2_at_discharge=1 then newvar=' Yes';
+	drop O2_at_discharge;
+run;
+
+*labeling the variable itself*;
+data dummy;
+	length newvar $ 30.;
+	newvar='O2_at_discharge [n(%)]';
+run;
+
+*combining data sets*;
+data O2_discharge;
+	set dummy O2_discharge4;
+	ord=13;
+run;
+
+*combine ALL data tables;
+data final;
+	set Age sex LOS Dex Confinal Rem Toc multiple_drugs Vent PaO2_FiO2_ratio PF_ratio_daa O2_supp O2_discharge;
+run;
+
+*Polishing the table*;
+options nocenter nodate nonumber; title;
+proc report data=final nowd headline headskip split='*';
+	column ('--' ord newvar _9 Control Treatment);
+	define ord/order noprint;
+	break after ord/skip;
+	define newvar/'';
+	define _9/'Total*(N=21)';
+	define Control/'Control*(N=11)';
+	define Treatment/'Treatment*(N=10)';
+	compute before _page_;
+	line @20 'SAVIOR II Subject Descriptive Statistics';
+	line '';
+	endcomp;
+	compute after;
+	line @2 80*'-';
+	line @4 'Reference:';
+	endcomp;
+run;
