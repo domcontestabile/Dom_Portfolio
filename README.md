@@ -14,12 +14,6 @@ Overview:
 - Created a Table 1 of study patient descriptive statistics 
 - Created a boxplot to visually show the signifcant difference between average patient P/F ratios and their treatment group
 
-![Distribution of PaO2_FiO2_ratio](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/935442bb-3b6a-4f0f-a8c0-4b1377c37e74)
-
-[Table 1 Savior II.docx](https://github.com/domcontestabile/Dom_Portfolio/files/11556657/Table.1.Savior.II.docx)
-
-[SAVIORII_abstract_final.docx](https://github.com/domcontestabile/Dom_Portfolio/files/11556664/SAVIORII_abstract_final.docx)
-
 # [COVID-19 State-level Changes in Positive Cases Between States with Early and Delayed Removal of Social Distancing Restrictions in 2020 Report](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID19_State_level_Changes_during_2020)
 
 Objective: Compare the trajectory of positive cases between states that aggressively relaxed distancing restrictions in mid-May 2020 and states that delayed such measures. Assess whether there were changes in the case hospitalization rate (CHR) from early in the pandemic to later, considering potential factors such as underlying severity and/or the evolution of clinical management.
