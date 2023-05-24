@@ -1,7 +1,26 @@
 # Dom Contestabile Data Portfolio
 Description: Data analysis and statistics portfolio containing past projects that demonstrate my coding abilities in SAS and SQL
 
-# [COVID-19 State-level Changes during 2020 Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID19_State_level_Changes_during_2020)
+# [SAVIOR II Study: Non-invasive Vagus Nerve Stimulation (nVNS) for the Prophylaxis and Treatment of Acute Respiratory Distress Syndrome in COVID-19 Patients](https://github.com/domcontestabile/Dom_Portfolio/blob/main/SaviorII_study_statistics_code)
+
+Objective: Investigate whether non-invasive vagus nerve stimulation (nVNS) can reduce respiratory distress in COVID-19 patients, who were admitted to Allegheny General Hospital in 2020. Assess the effectiveness of nVNS in improving respiratory symptoms, reducing inflammation, and enhancing cardiopulmonary outcomes, with the goal of potentially using nVNS as a non-invasive and easy-to-administer therapy for acute respiratory distress syndrome (ARDS).
+
+Programming: SAS
+
+Overview:
+- Recoded new labels on already exisiting variables
+- Utilized two-sample t tests and Fisher’s exact tests to determine any significant relationships between patient treatment group and continuous and categorical variables, respectively  
+- Observed a significant difference (p<0.05) between average patient PaO2/FiO2 (or P/F) ratios and their treatment group (t = -3.94; 95% CI 27.1 to 106.5; P = 0.0109)
+- Created a Table 1 of study patient descriptive statistics 
+- Created a boxplot to visually show the signifcant difference between average patient P/F ratios and their treatment group
+
+![Distribution of PaO2_FiO2_ratio](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/935442bb-3b6a-4f0f-a8c0-4b1377c37e74)
+
+[Table 1 Savior II.docx](https://github.com/domcontestabile/Dom_Portfolio/files/11556657/Table.1.Savior.II.docx)
+
+[SAVIORII_abstract_final.docx](https://github.com/domcontestabile/Dom_Portfolio/files/11556664/SAVIORII_abstract_final.docx)
+
+# [COVID-19 State-level Changes in Positive Cases Between States with Relaxed and Strict Social Distancing Restrictions during 2020 Report](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID19_State_level_Changes_during_2020)
 
 Objective: Compare the trajectory of positive cases between states that aggressively relaxed distancing restrictions in mid-May 2020 and states that delayed such measures. Assess whether there were changes in the case hospitalization rate (CHR) from early in the pandemic to later, considering potential factors such as underlying severity and/or the evolution of clinical management.
 
