@@ -27,16 +27,13 @@ Objective: Compare the trajectory of positive cases between states that aggressi
 Programming: SAS
 
 Overview:
+- Merged state population/re-opening approach dataset with state covid cases/hospitalizations/deaths dataset
 - Calculated descriptive statistics and a box plot for the number of positive cases per capita by time (April vs. December) and re-opening approach (early vs. delayed)
-- Computed a mixed effect regression model of positive cases per capita (100,000 cases/population) on re-opening approach treating state/DC as a random subject effect in the repeated statement using maximum likelihood estimation and an unstructured covariance structure
+- Computed a mixed effect regression model of positive cases per capita (100,000 cases/population) on re-opening approach 
 - Calculated descriptive statistics for case hospitalization rate (CHR), defined as 100 * (total hospitalizations in a month / total positive cases in a month) during April 2020, December 2020, and the change in CHR within states (December minus April)
 - Assessed whether the change in CHR within states was statistically significantly different than 0 using a paired t-test.
 
 [Final Report - Dom Contestabile.docx](https://github.com/domcontestabile/Dom_Portfolio/files/11547336/Final.Report.-.Dom.Contestabile.docx)
-
-Datasets: 
-- [COVIDTrackingApr2020_Dec2020.csv](https://github.com/domcontestabile/Dom_Portfolio/files/11547347/COVIDTrackingApr2020_Dec2020.csv) 
-- [state_info.csv](https://github.com/domcontestabile/Dom_Portfolio/files/11547349/state_info.csv)
 
 # [Second-hand Vinyl Store Database Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Second_hand_Vinyl_Store_Database) 
 
