@@ -1,0 +1,51 @@
+CREATE TABLE actors (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age INTEGER,
+    sex TEXT,
+    race TEXT);
+    
+INSERT INTO actors (name, age, sex, race) VALUES ("Morgan Freeman", 85, "Male", "African American");
+INSERT INTO actors (name, age, sex, race) VALUES ("Jim Carrey", 61, "Male", "Caucasian");
+INSERT INTO actors (name, age, sex, race) VALUES ("Jennifer Aniston", 54, "Female", "Caucasian");
+INSERT INTO actors (name, age, sex, race) VALUES ("Adam Sandler", 56, "Male", "Caucasian");
+INSERT INTO actors (name, age, sex, race) VALUES ("Salma Hayek", 56, "Female", "Hispanic");
+INSERT INTO actors (name, age, sex, race) VALUES ("Denzel Washington", 68, "Male", "African American");
+INSERT INTO actors (name, age, sex, race) VALUES ("Keanu Reeves", 58, "Male", "Caucasian");
+INSERT INTO actors (name, age, sex, race) VALUES ("Nicolas Cage", 59, "Male", "Caucasian");
+INSERT INTO actors (name, age, sex, race) VALUES ("Zendaya", 26, "Female", "African American");
+INSERT INTO actors (name, age, sex, race) VALUES ("Tom Holland", 26, "Male", "Caucasian");
+INSERT INTO actors (name, age, sex, race) VALUES ("Tobey Maguire", 47, "Male", "Caucasian");
+INSERT INTO actors (name, age, sex, race) VALUES ("Robert Downey Jr.", 58, "Male", "Caucasian");
+INSERT INTO actors (name, age, sex, race) VALUES ("Dwayne Johnson", 51, "Male", "African American");
+INSERT INTO actors (name, age, sex, race) VALUES ("Anne Hathaway", 40, "Female", "Caucasian");
+INSERT INTO actors (name, age, sex, race) VALUES ("Sofia Vergara", 50, "Female", "Hispanic");
+
+CREATE TABLE movies (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    actor_id INTEGER,
+    net_worth_in_million INTEGER,
+    number_of_movies INTEGER,
+    highest_grossing_movie TEXT);
+    
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (1, 250, 120, "The Dark Knight Rises");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (2, 180, 57, "Bruce Almighty");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (3, 320, 49, "Bruce Almighty");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (4, 420, 81, "Hotel Transylvania 3: Summer Vacation");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (5, 120, 65, "Grown Ups");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (6, 300, 65, "American Gangster");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (7, 380, 80, "Toy Story 4");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (8, 25, 119, "National Treasure: Book of Secrets");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (9, 20, 28, "Spider-Man: No Way Home");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (10, 25, 32, "Spider-Man: No Way Home");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (11, 100, 46, "Spider-Man: No Way Home");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (12, 300, 87, "Avengers: Endgame");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (13, 820, 66, "Furious 7");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (14, 80, 56, "The Dark Knight Rises");
+INSERT INTO movies (actor_id, net_worth_in_million, number_of_movies, highest_grossing_movie) VALUES (15, 180, 24, "Chef");
+
+/*joining both tables based on ID*/
+SELECT actors.name, actors.age, actors.sex, actors.race, movies.actor_id, movies.net_worth_in_million, movies.number_of_movies, movies.highest_grossing_movie
+    FROM actors
+    JOIN movies
+    ON actors.id = movies.actor_id;
