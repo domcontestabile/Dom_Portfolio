@@ -20,7 +20,7 @@ Overview:
 
 [SAVIORII_abstract_final.docx](https://github.com/domcontestabile/Dom_Portfolio/files/11556664/SAVIORII_abstract_final.docx)
 
-# [COVID-19 State-level Changes in Positive Cases Between States with Relaxed and Strict Social Distancing Restrictions during 2020 Report](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID19_State_level_Changes_during_2020)
+# [COVID-19 State-level Changes in Positive Cases Between States with Early and Delayed Removal of Social Distancing Restrictions in 2020 Report](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID19_State_level_Changes_during_2020)
 
 Objective: Compare the trajectory of positive cases between states that aggressively relaxed distancing restrictions in mid-May 2020 and states that delayed such measures. Assess whether there were changes in the case hospitalization rate (CHR) from early in the pandemic to later, considering potential factors such as underlying severity and/or the evolution of clinical management.
 
@@ -32,6 +32,8 @@ Overview:
 - Computed a mixed effect regression model of positive cases per capita (100,000 cases/population) on re-opening approach 
 - Calculated descriptive statistics for case hospitalization rate (CHR), defined as 100 * (total hospitalizations in a month / total positive cases in a month) during April 2020, December 2020, and the change in CHR within states (December minus April)
 - Assessed whether the change in CHR within states was statistically significantly different than 0 using a paired t-test.
+
+![positive covid cases per capita boxplot](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/2bc59221-ac55-4fdf-bfb1-6add01c1d3f8)
 
 [Final Report - Dom Contestabile.docx](https://github.com/domcontestabile/Dom_Portfolio/files/11547336/Final.Report.-.Dom.Contestabile.docx)
 
