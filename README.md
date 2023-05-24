@@ -10,7 +10,7 @@ Programming: SAS
 Overview:
 - Recoded new labels on already exisiting variables
 - Utilized two-sample t tests and Fisher’s exact tests to determine any significant relationships between patient treatment group and continuous and categorical variables, respectively  
-- Observed a significant difference (p<0.05) between average patient PaO2/FiO2 (or P/F) ratios and their treatment group (t = -3.94; 95% CI 27.1 to 106.5; P = 0.0109)
+- Observed a significant difference (p<0.05) between average patient PaO2/FiO2 (or P/F) ratios and their treatment group
 - Created a Table 1 of study patient descriptive statistics 
 - Created a boxplot to visually show the signifcant difference between average patient P/F ratios and their treatment group
 
