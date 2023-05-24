@@ -41,3 +41,13 @@ Overview:
 - Calculated similar statistics per category in the data using HAVING statements
 - Grouped data by transofrming numerical data into categorical data for player height, weight, and age
 - Filtered the data for players that received "player of the week" early and late in their careers using AND/OR statements 
+
+# [Movie Actors/Actresses Joined Tables Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Movie_Actors%26Actresses_Joined_Tables)
+
+Objective: Demonstrate how to combine two tables of related data based on ID numbers.
+
+Programming: SQL
+
+Overview:
+- Created two tables of data assoicated with famous movie actors/actresses
+- Combined tables based on a similar primary key (ID) using a JOIN statement
