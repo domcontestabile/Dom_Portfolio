@@ -1,5 +1,5 @@
-# Dom_Portfolio
-Data analysis and statistics portfolio containing past projects that demonstrate my coding abilities in SAS and SQL
+# Dom Contestabile Data Portfolio
+Description: Data analysis and statistics portfolio containing past projects that demonstrate my coding abilities in SAS and SQL
 
 # [COVID-19 State-level Changes during 2020 Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID19_State_level_Changes_during_2020)
 
@@ -39,7 +39,7 @@ Programming: SQL
 Overview:
 - Calculated the average, maximum, and minimum values for player height, weight, and age
 - Calculated similar statistics per category in the data using HAVING statements
-- Grouped data by transofrming numerical data into categorical data for player height, weight, and age
+- Grouped data by transforming numerical data into categorical data for player height, weight, and age
 - Filtered the data for players that received "player of the week" early and late in their careers using AND/OR statements 
 
 # [Movie Actors/Actresses Joined Tables Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Movie_Actors%26Actresses_Joined_Tables)
@@ -49,5 +49,16 @@ Objective: Demonstrate how to combine two tables of related data based on ID num
 Programming: SQL
 
 Overview:
-- Created two tables of data assoicated with famous movie actors/actresses
+- Created two tables of data associated with famous movie actors/actresses
 - Combined tables based on a similar primary key (ID) using a JOIN statement
+
+# [Exercise Log App Impersonator Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Exercise_Log_App_Impersonator)
+
+Objective: Demonstrate how to update and delete already existing data.
+
+Programming: SQL
+
+Overview:
+- Created a table of data for a hypothetical exercise tracker app where you log your physical activity details
+- Altered an already existing variable's category setting using an UPDATE statement
+- Experimented with deleting rows of data based on specific criteria using a DELETE statement
