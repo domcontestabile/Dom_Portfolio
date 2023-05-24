@@ -1,0 +1,48 @@
+CREATE a table to store the data.
+INSERT a few example rows in the table.
+Use an UPDATE to emulate what happens when you edit data in the app.
+Use a DELETE to emulate what happens when you delete data in the app.*/
+
+CREATE table exercise_log (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    exercise_type TEXT,
+    exercise_name TEXT,
+    intensity TEXT,
+    duration_minutes INTEGER,
+    heart_rate_bpm INTEGER,
+    calories_burned INTEGER);
+
+INSERT INTO exercise_log (exercise_type, exercise_name, intensity, duration_minutes, heart_rate_bpm, calories_burned)
+    VALUES ("cardio", "jogging", "moderate", 30, 120, 300);
+INSERT INTO exercise_log (exercise_type, exercise_name, intensity, duration_minutes, heart_rate_bpm, calories_burned)
+    VALUES ("weight training", "barbell chest press", "hard", 20, 155, 80);
+INSERT INTO exercise_log (exercise_type, exercise_name, intensity, duration_minutes, heart_rate_bpm, calories_burned)
+    VALUES ("cardio", "sprinting", "very hard", 20, 180, 150);
+INSERT INTO exercise_log (exercise_type, exercise_name, intensity, duration_minutes, heart_rate_bpm, calories_burned)
+    VALUES ("weight training", "dumbbell chest flys", "moderate", 10, 110, 60);
+INSERT INTO exercise_log (exercise_type, exercise_name, intensity, duration_minutes, heart_rate_bpm, calories_burned)
+    VALUES ("weight training", "cable tricep pushdown", "moderate", 8, 110, 40);
+INSERT INTO exercise_log (exercise_type, exercise_name, intensity, duration_minutes, heart_rate_bpm, calories_burned)
+    VALUES ("weight training", "barbell squat", "hard", 25, 165, 180);
+INSERT INTO exercise_log (exercise_type, exercise_name, intensity, duration_minutes, heart_rate_bpm, calories_burned)
+    VALUES ("weight training", "leg extensions", "moderate", 10, 125, 100);
+INSERT INTO exercise_log (exercise_type, exercise_name, intensity, duration_minutes, heart_rate_bpm, calories_burned)
+    VALUES ("weight training", "hamstring curls", "light", 8, 105, 50);
+INSERT INTO exercise_log (exercise_type, exercise_name, intensity, duration_minutes, heart_rate_bpm, calories_burned)
+    VALUES ("cardio", "burpees", "very hard", 15, 185, 200);
+INSERT INTO exercise_log (exercise_type, exercise_name, intensity, duration_minutes, heart_rate_bpm, calories_burned)
+    VALUES ("weight training", "bicep curls", "moderate", 12, 115, 70);
+
+/*changing intensity category 'very hard' to just 'hard'*/
+UPDATE exercise_log SET intensity = "hard"
+    WHERE intensity = "very hard";
+    
+/*checking revised table*/    
+SELECT * FROM exercise_log;
+
+/*practicing with DELETE option*/ 
+DELETE FROM exercise_log
+    WHERE exercise_type = "cardio";
+    
+/*checking revised table*/
+SELECT * FROM exercise_log;
