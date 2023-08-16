@@ -1,0 +1,90 @@
+*-----------------------------------------------*
+|   Stryker IIT Retrospective Data Analysis     |
+|							                    | 
+|         Programmer: Dom Contestabile          |
+*-----------------------------------------------*;
+
+*creating library*;
+libname sas
+'C:\Users\dcontest\OneDrive - Highmark Health\SAS';
+
+*importing polymets_data*;
+proc import out=sas.stryker_retro
+datafile='C:\Users\dcontest\OneDrive - Highmark Health\SAS\stryker_retro.xlsx'
+	dbms=xlsx replace;
+run;
+
+*moving saviorII data to work library*;
+data work.stryker_retro;
+	set sas.stryker_retro;
+run;
+
+*inspecting file contents*;
+proc print data=stryker_retro (obs=20);
+run;
+
+*labeling values for each variable*;
+proc format library=sas.formats;
+		value C3_4x  0 = "No"
+					 1 = "Yes";
+		value C4_5x	 0 = "No"
+					 1 = "Yes";
+		value C5_6x  0 = "No"
+					 1 = "Yes";
+		value C6_7x  0 = "No"
+					 1 = "Yes";
+		value Multiple_levelsx  0 = "No"
+					 			1 = "Yes";
+		value Stenosisx  		0 = "No"
+							    1 = "Yes";
+		value Radiculopathyx    0 = "No"
+							    1 = "Yes";
+		value Spondylosisx      0 = "No"
+					            1 = "Yes";
+		value Spondylolisthesisx  0 = "No"
+					              1 = "Yes";
+		value Myelopathyx       0 = "No"
+					            1 = "Yes";
+		value Herniationx       0 = "No"
+					 			1 = "Yes";
+		value Otherx  		    0 = "No"
+					 			1 = "Yes";
+
+run;
+
+*tells SAS where to look for formats*;
+options fmtsearch=(sas.formats);
+
+data stryker_retro;
+	set stryker_retro;
+	format C3_4 C3_4x.
+		   C4_5 C4_5x.
+		   C5_6 C5_6x.
+		   C6_7 C6_7x.
+		   Multiple_levels Multiple_levelsx.
+		   Stenosis Stenosisx.
+		   Radiculopathy Radiculopathyx.
+		   Spondylosis Spondylosisx.
+		   Spondylolisthesis Spondylolisthesisx.
+		   Myelopathy Myelopathyx.
+		   Herniation Herniationx.
+		   Other Otherx.;
+run;
+
+*inspecting new dataset*;
+proc contents data=stryker_retro;
+run;
+
+proc print data=stryker_retro (obs=20);
+run;
+
+*DESCRIPTIVE STATS*;
+
+proc means data=stryker_retro n mean std stderr min max;
+var Age Weight__lbs Height_m BMI;
+run;
+
+proc freq data=stryker_retro;
+table Sex Race Ethnicity C3_4 C4_5 C5_6 C6_7 Multiple_levels Stenosis Radiculopathy Spondylosis Spondylolisthesis
+	  Myelopathy Herniation Other Smoker;
+run;
