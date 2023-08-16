@@ -1,6 +1,6 @@
 *------------------------------*
 |     Savior II Results        |
-|							                 | 
+|			       | 
 | Programmer: Dom Contestabile |
 *------------------------------*;
 
@@ -8,7 +8,7 @@
 libname sas
 'C:\Users\dcontest\OneDrive - Highmark Health\SAS';
 
-*importing polymets_data*;
+*importing saviorII*;
 proc import out=sas.saviorII
 datafile='C:\Users\dcontest\OneDrive - Highmark Health\SAS\saviorII.xlsx'
 	dbms=xlsx replace;
@@ -25,14 +25,14 @@ run;
 
 *labeling values for each variable*;
 proc format library=sas.formats;
-		value clinical_eventx 		 0 = "No"
-							 		 1 = "Yes";
-		value one_or_more_drugsx	 0 = "No"
-									 1 = "Yes";
-		value O2_at_dischargex 		 0 = "No"
-									 1 = "Yes";
+		value clinical_eventx 	     0 = "No"
+					     1 = "Yes";
+		value one_or_more_drugsx     0 = "No"
+					     1 = "Yes";
+		value O2_at_dischargex 	     0 = "No"
+					     1 = "Yes";
 		value _30_day_readmissionx   0 = "No"
-									 1 = "Yes";
+					     1 = "Yes";
 run;
 
 *tells SAS where to look for formats*;
