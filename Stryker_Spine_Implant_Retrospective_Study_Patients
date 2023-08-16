@@ -1,6 +1,6 @@
 *-----------------------------------------------*
 |   Stryker IIT Retrospective Data Analysis     |
-|							                    | 
+|					        | 
 |         Programmer: Dom Contestabile          |
 *-----------------------------------------------*;
 
@@ -26,29 +26,29 @@ run;
 *labeling values for each variable*;
 proc format library=sas.formats;
 		value C3_4x  0 = "No"
-					 1 = "Yes";
-		value C4_5x	 0 = "No"
-					 1 = "Yes";
+			     1 = "Yes";
+		value C4_5x  0 = "No"
+			     1 = "Yes";
 		value C5_6x  0 = "No"
-					 1 = "Yes";
+			     1 = "Yes";
 		value C6_7x  0 = "No"
-					 1 = "Yes";
+			     1 = "Yes";
 		value Multiple_levelsx  0 = "No"
-					 			1 = "Yes";
-		value Stenosisx  		0 = "No"
-							    1 = "Yes";
+					1 = "Yes";
+		value Stenosisx         0 = "No"
+					1 = "Yes";
 		value Radiculopathyx    0 = "No"
-							    1 = "Yes";
+					1 = "Yes";
 		value Spondylosisx      0 = "No"
-					            1 = "Yes";
+					1 = "Yes";
 		value Spondylolisthesisx  0 = "No"
-					              1 = "Yes";
+					  1 = "Yes";
 		value Myelopathyx       0 = "No"
-					            1 = "Yes";
+					1 = "Yes";
 		value Herniationx       0 = "No"
-					 			1 = "Yes";
-		value Otherx  		    0 = "No"
-					 			1 = "Yes";
+				        1 = "Yes";
+		value Otherx  		0 = "No"
+					1 = "Yes";
 
 run;
 
