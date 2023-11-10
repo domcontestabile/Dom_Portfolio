@@ -27,8 +27,6 @@ Overview:
 - Calculated descriptive statistics for case hospitalization rate (CHR), defined as 100 * (total hospitalizations in a month / total positive cases in a month) during April 2020, December 2020, and the change in CHR within states (December minus April)
 - Assessed whether the change in CHR within states was statistically significantly different than 0 using a paired t-test.
 
-![positive covid cases per capita boxplot](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/2bc59221-ac55-4fdf-bfb1-6add01c1d3f8)
-
 [Final Report - Dom Contestabile.docx](https://github.com/domcontestabile/Dom_Portfolio/files/11547336/Final.Report.-.Dom.Contestabile.docx)
 
 # [Stryker Spine Observational Trial of Clinical Outcomes following Anterior Cervical Discectomy and Fusion with Instrumentation using Allograft or Tritanium - Retrospective Patient Statistics](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Stryker_Spine_Implant_Retrospective_Study_Patients)
