@@ -1,5 +1,5 @@
 # Dom Contestabile Data Portfolio
-Description: Data analysis and statistics portfolio containing past projects that demonstrate my coding abilities in SAS and SQL
+Description: Data analysis and statistics portfolio containing past projects that demonstrate my coding abilities in SAS, SQL, & Google Sheets
 
 # [SAVIOR II Study: Non-invasive Vagus Nerve Stimulation (nVNS) for the Prophylaxis and Treatment of Acute Respiratory Distress Syndrome in COVID-19 Patients](https://github.com/domcontestabile/Dom_Portfolio/blob/main/SaviorII_study_statistics_code)
 
@@ -39,6 +39,26 @@ Programming: SAS
 
 Overview:
 - Calculated descriptive statistics for the retrospective patient sample's continuous and categorical variables (continuous: age, weight, height, & BMI; categorical: sex, race, ethnicity, treated cervical index level, diagnosis, & smoking status)
+
+# [NY Citi Bike Data Analysis Project](https://secure-web.cisco.com/1wJiRYOwgAdWiqq5q-HGfiwA5vFwWywHs3tGlPaNAbGiideu-DxiMNS8Nf6r6zvrOfwy2Zlassc9bBOx_vspSUls0jlmXEPtBJaDn5g4ymP7bcDqluJ0rhDk-hrO6_GeNRoXxuswuQrXtwgvPizp24NQlPHNibirFIxc-axXJFKjXQ9GS0GClRhRgVh4U3V3A5yoIHHedujTJFN6yf_4TZCgzEblhEQsmPqOYLLauAbj1_wWuch_NaJiJC-pwdO6KJ_SQ2u4jO2whgspWzcMZp-BJX5RkyulE01bnUEbAaYZ7iCyvTeAa6BMku7WXuI7N/https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1XlpHhsr8NQSZBynY95BAMer_1cFC3vZExQeeWlrOZ6I%2Fedit%3Fusp%3Dsharing)
+
+Objective: Practice the role of a data analyst and work with a real dataset (sourced from Kaggle) to solve a hypothetical business challenge. For the purposes of this project, I chose to analyze a dataset from a bike-sharing company, known as Citi Bike. Answer the folling questions to help key stakeholders to make smart, data-driven decisions based on the insights I uncover:
+
+1. What are the most popular pick-up locations across the city for NY Citi Bike rental?
+2. How does the average trip duration vary across different age groups?
+3. Which age group rents the most bikes?
+4. How does bike rental vary across the two user groups (one-time users vs long-term subscribers) on different days of the week?
+5. Does user age impact the average bike trip duration?
+
+Programming: Google Sheets
+
+Overview:
+- Cleaned a NY Citi Bike dataset, removed duplicates, and handled missing data
+- Conducted an exploratory data analysis, calculated descriptive statistics, and created pivot tables in order to better understand the data
+- Created data visualizations in order to summarize and present key findings in a concise and accessible format
+- Crafted a polished, professional presentation, ready to share with stakeholders
+
+[NY Citi Bike Data Analysis Presentation - Dom Contestabile](https://secure-web.cisco.com/1LxKQHMUwWHNQ5Mq6g5YM5NfqDvSZXAyAQlF1m0WE9Ibm3rip01h-aJ-kCAo3hx7vWN4O_MMPwo1pl-ZFp0gsSVL88MRc6xIIP3gMGB4FymI4dM1IlLC4kZqpcggDjJjplbeGrx-4-J_rdY6JOEzUpWkulscQzevlFI8j9yMxVZGrM75j9OY1f0AUqp9LsKyGa3Xl-xLHmmi83R8-kjDDOVE8_eog6dhBkqyKHyesCxYtBEY0t8zuYC_YP8Gkiq9IRgcmPbe50Vd4MkWQPXMWFm4tqGV6hjtRlGn4MPCuK-FR7OwbKmkMtFy5Uom2zrCq/https%3A%2F%2Fdocs.google.com%2Fpresentation%2Fd%2F18wUVyXCMzsylhfGgkgcEazK83IBnb_4sN4fOmW1vlms%2Fedit%3Fusp%3Dsharing)
 
 # [Second-hand Vinyl Store Database Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Second_hand_Vinyl_Store_Database) 
 
