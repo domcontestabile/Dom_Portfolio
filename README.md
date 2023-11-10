@@ -42,7 +42,7 @@ Overview:
 
 # [NY Citi Bike Data Analysis Project](https://secure-web.cisco.com/1wJiRYOwgAdWiqq5q-HGfiwA5vFwWywHs3tGlPaNAbGiideu-DxiMNS8Nf6r6zvrOfwy2Zlassc9bBOx_vspSUls0jlmXEPtBJaDn5g4ymP7bcDqluJ0rhDk-hrO6_GeNRoXxuswuQrXtwgvPizp24NQlPHNibirFIxc-axXJFKjXQ9GS0GClRhRgVh4U3V3A5yoIHHedujTJFN6yf_4TZCgzEblhEQsmPqOYLLauAbj1_wWuch_NaJiJC-pwdO6KJ_SQ2u4jO2whgspWzcMZp-BJX5RkyulE01bnUEbAaYZ7iCyvTeAa6BMku7WXuI7N/https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1XlpHhsr8NQSZBynY95BAMer_1cFC3vZExQeeWlrOZ6I%2Fedit%3Fusp%3Dsharing)
 
-Objective: Practice the role of a data analyst and work with a real dataset (sourced from Kaggle) to solve a hypothetical business challenge. For the purposes of this project, I chose to analyze a dataset from a bike-sharing company, known as Citi Bike. Answer the folling questions to help key stakeholders to make smart, data-driven decisions based on the insights I uncover:
+Objective: Practice the role of a data analyst and work with a real dataset (sourced from Kaggle) to solve a hypothetical business challenge. For the purposes of this project, I chose to analyze a dataset from a bike-sharing company, known as Citi Bike. Answer the following questions to help key stakeholders to make smart, data-driven decisions based on the insights I uncover:
 
 1. What are the most popular pick-up locations across the city for NY Citi Bike rental?
 2. How does the average trip duration vary across different age groups?
