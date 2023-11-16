@@ -14,6 +14,8 @@ Overview:
 - Created a Table 1 of study patient descriptive statistics 
 - Created a boxplot to visually show the signifcant difference between average patient P/F ratios and their treatment group
 
+![PaO2 FiO2 boxplot](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/2fa605a2-a6dd-4ded-ac27-406566538869)
+
 # [COVID-19 State-level Changes in Positive Cases Between States with Early and Delayed Removal of Social Distancing Restrictions in 2020 Report](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID19_State_level_Changes_during_2020)
 
 Objective: Compare the trajectory of positive cases between states that aggressively relaxed distancing restrictions in mid-May 2020 and states that delayed such measures. Assess whether there were changes in the case hospitalization rate (CHR) from early in the pandemic to later, considering potential factors such as underlying severity and/or the evolution of clinical management.
@@ -27,6 +29,8 @@ Overview:
 - Calculated descriptive statistics for case hospitalization rate (CHR), defined as 100 * (total hospitalizations in a month / total positive cases in a month) during April 2020, December 2020, and the change in CHR within states (December minus April)
 - Assessed whether the change in CHR within states was statistically significantly different than 0 using a paired t-test.
 
+![positive cases per capita by time and reopening approach](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/3ec39f52-e1e7-41cc-af7b-dbd6b75754c8) 
+
 [Final Report - Dom Contestabile.docx](https://github.com/domcontestabile/Dom_Portfolio/files/11547336/Final.Report.-.Dom.Contestabile.docx)
 
 # [Multiple Sclerosis (MS) Data Analysis Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/MS_Data_Analysis)
@@ -36,17 +40,13 @@ Objective: Practice the role of a data analyst and work with a real dataset (sou
 Programming: SAS
 
 Overview:
-•	Re-named variables and created new variables from existing variables for analysis purposes (ex: changing age from a continuous variable into a categorical range variable)
-•	Calculated descriptive statistics for all continuous and categorical variables
-•	Performed a chi-square test and calculated the odds ratio for the association between CDMS group and gender
-•	Created frequency tables and data visualizations (bar graphs)
-•	Provided clear interpretations of the values produced from each data step 
+- Re-named variables and created new variables from existing variables for analysis purposes (ex: changing age from a continuous variable into a categorical range variable)
+- Calculated descriptive statistics for all continuous and categorical variables
+- Performed a chi-square test and calculated the odds ratio for the association between CDMS group and gender
+- Created frequency tables and data visualizations (bar graphs)
+- Provided clear interpretations of the values produced from each data step 
 
-![EDSS change bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/ae15c244-497d-45b8-b662-ca27805f98cb)
-![Stacked bar gender bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/1f82a9b5-ca9e-47d0-9cd9-1a965fb01be8)
-![initial symptoms bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/4e1eacb1-9b0b-411b-afcb-4edc70339bd0)
-![proc freq age ranges](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/2ee53670-6380-427c-8819-16efd47f3900)
-![proc freq MRI](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/64c9d71c-88cc-48d9-9d1e-d0408e733832)
+![Stacked bar gender bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/1f82a9b5-ca9e-47d0-9cd9-1a965fb01be8) 
 
 # [Stryker Spine Observational Trial of Clinical Outcomes following Anterior Cervical Discectomy and Fusion with Instrumentation using Allograft or Tritanium - Retrospective Patient Statistics](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Stryker_Spine_Implant_Retrospective_Study_Patients)
 
