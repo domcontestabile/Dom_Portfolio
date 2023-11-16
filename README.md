@@ -29,6 +29,25 @@ Overview:
 
 [Final Report - Dom Contestabile.docx](https://github.com/domcontestabile/Dom_Portfolio/files/11547336/Final.Report.-.Dom.Contestabile.docx)
 
+# [Multiple Sclerosis (MS) Data Analysis Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/MS_Data_Analysis)
+
+Objective: Practice the role of a data analyst and work with a real dataset (sourced from Kaggle) to conduct an exploratory analysis and draw out meaningful findings.  I chose to analyze a dataset from a prospective cohort study that was conducted in Mexican patients newly diagnosed with Multiple Sclerosis (MS), who presented at the National Institute of Neurology and Neurosurgery (NINN) in Mexico City, Mexico, between 2006 and 2010.  Answer the following questions to help gain insight on certain predictor variables:
+
+Programming: SAS
+
+Overview:
+•	Re-named variables and created new variables from existing variables for analysis purposes (ex: changing age from a continuous variable into a categorical range variable)
+•	Calculated descriptive statistics for all continuous and categorical variables
+•	Performed a chi-square test and calculated the odds ratio for the association between CDMS group and gender
+•	Created frequency tables and data visualizations (bar graphs)
+•	Provided clear interpretations of the values produced from each data step 
+
+![EDSS change bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/ae15c244-497d-45b8-b662-ca27805f98cb)
+![Stacked bar gender bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/1f82a9b5-ca9e-47d0-9cd9-1a965fb01be8)
+![initial symptoms bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/4e1eacb1-9b0b-411b-afcb-4edc70339bd0)
+![proc freq age ranges](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/2ee53670-6380-427c-8819-16efd47f3900)
+![proc freq MRI](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/64c9d71c-88cc-48d9-9d1e-d0408e733832)
+
 # [Stryker Spine Observational Trial of Clinical Outcomes following Anterior Cervical Discectomy and Fusion with Instrumentation using Allograft or Tritanium - Retrospective Patient Statistics](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Stryker_Spine_Implant_Retrospective_Study_Patients)
 
 Objective: To compare the rate of fusion success and adverse events, patients who undergo anterior cervical discectomy and fusion (ACDF) utilizing Tritanium C (Stryker Spine) will be retrospectively compared to a sample of 20 former patients. Create descriptive statistics for the 20 retrospective patients who underwent instrumented ACDF utilizing structural allograft bone with plates.
