@@ -1,0 +1,292 @@
+*------------------------------*
+|       MS Data Analysis       |
+|							   | 
+| Programmer: Dom Contestabile |
+*------------------------------*;
+
+*Data source: https://www.kaggle.com/datasets/desalegngeb/conversion-predictors-of-cis-to-multiple-sclerosis;
+*Data description: Prospective cohort study was conducted in Mexican mestizo patients newly diagnosed with CIS 
+who presented at the National Institute of Neurology and Neurosurgery (NINN) in Mexico City, Mexico, between 2006 and 2010.;
+*Citation: Pineda, Benjamin, Flores Rivera, Jose De Jesus (2023), “Conversion predictors of Clinically Isolated Syndrome 
+to Multiple Sclerosis in Mexican patients: a prospective study.”, Mendeley Data, V1, doi: 10.17632/8wk5hjx7x2.1*;
+
+*creating library*;
+libname ms
+'C:\Users\dcontest\OneDrive - Highmark Health\SAS';
+
+*importing MS_predictors data*;
+proc import out=ms.MS_predictors
+datafile='C:\Users\dcontest\OneDrive - Highmark Health\SAS\MS\MS_predictors.xlsx'
+	dbms=xlsx replace;
+run;
+
+*moving MS_predictors data to work library*;
+data work.MS_predictors;
+	set ms.MS_predictors;
+run;
+
+*inspecting file contents*;
+proc print data=MS_predictors (obs=20);
+run;
+
+*relabeling variables*;
+data MS_predictors;
+	set MS_predictors;
+
+	label 
+	Age="Age (years)"
+	Schooling="Schooling (years)"
+	Varicella="Varicella (Chickenpox)"
+	VEP="Visual evoked potential (VEP)"
+	BAEP="brainstem auditory evoked potentials (BAEP)"
+	initial_EDSS="initial Expanded Disability Status Scale (EDSS)"
+	final_EDSS="final Expanded Disability Status Scale (EDSS)"
+	Group="Clinically definite MS (CDMS)";
+run;
+
+*labeling values for each variable*;
+proc format library=ms.formats;
+		value Genderx 		 
+			1 = "male"
+			2 = "female";
+		value Breastfeedingx 
+			1 = "Yes"
+			2 = "No"
+			3 = "unknown";
+		value Varicellax 	
+			1 = "Yes"
+			2 = "No"
+			3 = "unknown";	
+		value Initial_Symptomx
+			1 = "visual"
+			2 = "sensory" 
+			3 = "motor" 
+			4 = "other" 
+			5 = "visual and sensory" 
+			6 = "visual and motor" 
+			7 = "visual and others" 
+			8 = "sensory and motor" 
+			9 = "sensory and other" 
+			10 = "motor and other" 
+			11 = "Visual, sensory and motor" 
+			12 = "visual, sensory and other" 
+			13 = "Visual, motor and other" 
+			14 = "Sensory, motor and other" 
+			15 = "visual, sensory, motor and other";
+		value Mono_or_Polysymptomaticx 
+			1 = "monosymptomatic" 
+			2 = "polysymptomatic" 
+			3 = "unknown";
+		value Oligoclonal_Bandsx 
+			0 = "negative" 
+			1 = "positive" 
+			2 = "unknown";
+		value VEPx
+			0 = "negative" 
+			1 = "positive";
+		value BAEPx
+			0 = "negative" 
+			1 = "positive";
+		value Periventricular_MRIx
+			0 = "negative" 
+			1 = "positive";
+		value Cortical_MRIx
+			0 = "negative" 
+			1 = "positive";
+		value Infratentorial_MRIx
+			0 = "negative" 
+			1 = "positive";
+		value Spinal_Cord_MRIx
+			0 = "negative" 
+			1 = "positive";
+		value Groupx
+			1 = "CDMS"
+			2 = "non-CDMS";
+run;
+
+*tells SAS where to look for formats*;
+options fmtsearch=(ms.formats);
+
+data MS_predictors;
+	set MS_predictors;
+	format Gender Genderx.
+		   Breastfeeding Breastfeedingx.
+		   Varicella Varicellax.
+		   Initial_Symptom Initial_Symptomx.
+		   Mono_or_Polysymptomatic Mono_or_Polysymptomaticx.
+		   Oligoclonal_Bands Oligoclonal_Bandsx.
+		   VEP VEPx.
+		   BAEP BAEPx.
+		   Periventricular_MRI Periventricular_MRIx.
+		   Cortical_MRI Cortical_MRIx.
+		   Infratentorial_MRI Infratentorial_MRIx.
+		   Spinal_Cord_MRI Spinal_Cord_MRIx.
+		   Group Groupx.;
+run;
+
+*inspecting new dataset*;
+proc contents data=MS_predictors;
+run;
+
+proc print data=MS_predictors (obs=20);
+run;
+
+***Recode new variables for analysis purposes***;
+
+*creating inital & final EDSS difference variable*;
+data MS_predictors;
+	set MS_predictors;
+
+	EDSS_diff = (final_EDSS - initial_EDSS); *equation to get difference*;
+	if final_EDSS = . then EDSS_diff = .; *accounts for any missing values within equation*;
+	if initial_EDSS = . then EDSS_diff = .; *accounts for any missing values within equation*;
+run;
+
+*grouping continuous age var into a categorical var with ranges*;
+proc means data=MS_predictors N Nmiss mean std min P25 P50 P75 max maxdec=2;
+	var Age;
+run;
+*mean=34, std=11, min=15, max=77*;
+
+*Since 77 is more than 3 standard devidations from the mean age of 34, I will mark that subject's age as missing*;
+data MS_predictors;
+	set MS_predictors;
+	if Age = 77 then Age = .;
+run;
+
+*After re-running proc means, new max age is 70. We will keep this value in the data because it fits in my 
+intended age ranges (by 10s)*;
+
+*creating age range var*;
+data MS_predictors;
+	set MS_predictors;
+
+	age_range = .;
+	if 10 < Age <= 20 then age_range = 1; *11-20*;
+	if 20 < Age <= 30 then age_range = 2; *21-30*;
+	if 30 < Age <= 40 then age_range = 3; *31-40*;
+	if 40 < Age <= 50 then age_range = 4; *41-50*;
+	if 50 < Age <= 60 then age_range = 5; *51-60*;
+	if 60 < Age <= 70 then age_range = 6; *61-70*;
+run;
+
+*re-labeling values in age range var*;
+proc format library=ms.formats;
+		value age_rangex 		 
+			1 = "11-20"
+			2 = "21-30"
+			3 = "31-40"
+			4 = "41-50"
+			5 = "51-60"
+			6 = "61-70";
+run;
+
+data MS_predictors;
+	set MS_predictors;
+	format age_range age_rangex.;
+run;
+
+*inspecting new var*;
+proc print data=MS_predictors (obs=20);
+run;
+
+
+***Exploratory analysis for ALL vars***;
+
+*running descriptive statistics for continuous vars*;
+proc means data=MS_predictors N Nmiss mean std min P25 P50 P75 max;
+	var Age Schooling initial_EDSS final_EDSS;
+run;
+
+*running descriptive statistics for categorical vars*;
+proc freq data=MS_predictors;
+	table Gender Breastfeeding Varicella Initial_Symptom Mono_or_Polysymptomatic Oligoclonal_Bands VEP BAEP Periventricular_MRI 
+	Cortical_MRI Infratentorial_MRI Spinal_Cord_MRI Group;
+run;
+
+***Investigating more specific research questions***;
+
+*What age range are most people diagnosed with CDMS?*;
+proc freq data=MS_predictors;
+	table group*age_range;
+run;
+
+*Age ranges: 11-20 = 3, 21-30 = 42, 31-40 = 40, 41-50 = 21, 51-60 = 10, 61-70 = 3, Total = 125 *;
+*For this data, those between the ages of 21-40 are the most likely to be diagnosed with CDMS.  Out of the
+entire sample size, this age range makes up approximately 66% of CDMS diagnoses.*;
+
+*Which kind of MRI is the most likely predictor of a CDMS diagnosis?*;
+proc sort data=MS_predictors;
+	by group;
+run;
+
+proc freq data=MS_predictors;
+	table Periventricular_MRI Cortical_MRI Infratentorial_MRI Spinal_Cord_MRI / missing;
+	by group;
+run;
+
+*Out of the 125 CMDS patients, the highest ratio of positive to negative CDMS diagnoses came from performing a 
+Periventricular MRI (80% positive (100 patients), 20% negative (25 patients))*;
+
+*What is the most common degree of change from initial EDSS to final EDSS between 2006 and 2010?
+For reference, the Expanded Disability Status Scale (EDSS) is a method of quantifying disability in multiple sclerosis 
+and monitoring changes in the level of disability over time. It is widely used in clinical trials and in the assessment 
+of people with MS*;
+proc freq data=MS_predictors;
+	table EDSS_diff;
+	by group;
+run;
+
+*creating EDSS change bar graph*;
+proc SGPLOT data = MS_predictors;
+	vbar EDSS_diff;
+	by group;
+	title 'Change from initial EDSS to final EDSS';
+run;
+*Over the course of four years between 2006 and 2010, the most common degree of change from initial EDSS to final EDSS 
+is 0 (88.8%).  An EDSS change of 1 made up 8.8% of the sample, a change of 2 made up 0.8% of the sample, and a positive 
+change -1 made up 1.6% of the sample*;
+
+***Analyzing predictor variables with stacked bar graphs, Fisher's exact test / chi squared tests, & odds ratios***;
+
+**Gender**;
+
+*stacked bar graph between CDMS & gender;
+title "CDMS vs Gender";
+proc sgplot data=MS_predictors pctlevel=group;
+	vbar gender / group=Group stat=percent missing;
+	label CDMS = "CDMS";
+run;
+*Interpretation:
+From a visual standpoint, males appear to have greater proportion of CDMS to non-CDMS patients than females, relative 
+to their respective sample sizes.;
+
+*Chi-square test between CDMS group and gender;
+proc freq data=MS_predictors;
+	table Group*Gender / chisq;
+run;
+
+*Interpretation:
+Since the p-value (<.0001) is less than our chosen significance level a = 0.05, we can reject the null hypothesis, and conclude 
+that males have a higher liklihood of having CDMS than females.;
+
+*Odds ratio;
+proc freq data=MS_predictors;
+	table Gender*Group / oddsratio;
+run;
+
+*Interpretation;
+*Males have a 2.7 times increased risk of having CDMS than females (OR = 2.7381, 95% CI: 1.6565-4.5261);
+
+**Initial Sympotms**;
+
+*stacked bar graph between CDMS & initial symptoms;
+title "CDMS vs Initial Symptoms";
+proc sgplot data=MS_predictors pctlevel=group;
+	vbar Initial_Symptom / group=Group stat=percent missing;
+	label CDMS = "CDMS";
+run;
+
+*Interpretation:
+From a visual standpoint, those who had multiple initial symptoms (2 or more) appear to have greater proportion of 
+CDMS to non-CDMS patients than those with fewer initial symptoms, relative to their respective sample sizes.;
