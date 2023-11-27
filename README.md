@@ -48,6 +48,17 @@ Overview:
 
 ![Stacked bar gender bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/1f82a9b5-ca9e-47d0-9cd9-1a965fb01be8) 
 
+# [Evaluation of Self-Inflicted vs. Non-Self-Inflicted Gunshot Wounds and Associated Injuries Involving the Hand and Upper Extremity - Retrospective Orthopedic Resident Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Gun_Shot_Wound_Analysis)
+
+Objective: To evaluate self-inflicted vs. non-self-inflicted gunshot wounds to the hand and upper extremity. The primary outcomes measured include the average number of trips to the OR, fracture pattern involved, initial management of injury, types of surgeries required, associated neurovascular damage, hand function after management via DASH and VAS scores, ability to return to work, and type of gun if available. This is retrospective cohort analysis of patients who present to Allegheny General Hospital Emergency Department with self-inflicted GSW to the hand or upper extremity from 1/1/2012 to 12/1/2022.
+
+Programming: SAS
+
+Overview:
+- Calculated descriptive statistics for all continuous and categorical variables
+- Performed chi-square tests, fisher's exact tests, and t-tests for primary variables and their association between types of gun shot wound velocities and types of surgeries
+- Performed two logistic regression analyses: where velocity is the outcome and gustilo-anderson and ethnicity are covariates & where velocity is the outcome and tscherne and ethnicity are covariates
+
 # [Stryker Spine Observational Trial of Clinical Outcomes following Anterior Cervical Discectomy and Fusion with Instrumentation using Allograft or Tritanium - Retrospective Patient Statistics](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Stryker_Spine_Implant_Retrospective_Study_Patients)
 
 Objective: To compare the rate of fusion success and adverse events, patients who undergo anterior cervical discectomy and fusion (ACDF) utilizing Tritanium C (Stryker Spine) will be retrospectively compared to a sample of 20 former patients. Create descriptive statistics for the 20 retrospective patients who underwent instrumented ACDF utilizing structural allograft bone with plates.
