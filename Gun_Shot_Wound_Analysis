@@ -1,0 +1,281 @@
+*-----------------------------------------------*
+|   GSW (gun shot wound) Results - Tommy Pan    |
+|							                                  | 
+|        Programmer: Dom Contestabile           |
+*-----------------------------------------------*;
+
+*creating library*;
+libname sas
+'C:\Users\dcontest\OneDrive - Highmark Health\SAS';
+
+*importing gsw data*;
+proc import out=sas.gsw1
+datafile='C:\Users\dcontest\OneDrive - Highmark Health\SAS\gsw1.xlsx'
+	dbms=xlsx replace;
+run;
+
+*moving gsw data to work library*;
+data work.gsw;
+	set sas.gsw1;
+run;
+
+*inspecting file contents*;
+proc print data=gsw (obs=20);
+run;
+
+*Missing data analysis*;
+data work.gsw;
+	set sas.gsw;
+	if OR = 0 then OR_trips = .;
+run;
+
+*Running descriptive statistics*;
+proc sort data=gsw;
+	by Type_of_GSW;
+run;
+
+*changing Duration_until_AB from char to numeric var*;
+data gsw;
+	set gsw;
+	Duration_until_AB_ = input(Duration_until_AB, comma9.);
+run;
+
+*removing outliers for EBL1 and Duration_until_AB_*;
+data gsw;
+	set gsw;
+	if EBL1 = 4250 then EBL1 = .;
+	if Duration_until_AB_ = 4320 then Duration_until_AB_ = .;
+run;
+
+***Running descriptive statistics***;
+
+*numerical variables*;
+proc means data=gsw N Nmiss mean std min P25 P50 P75 max min maxdec=2;
+	var Age BMI Trips_to_OR pRBC Specialty_Consults Op_Time LOS DASH Duration_of_total_FU;
+	by Type_of_GSW;
+run;
+
+*categorical variables*;
+proc freq data=gsw;
+	table Sex Ethnicity Location Multiple_Locations Type_of_GSW Velocity Type_of_Gun HTN DM PVD Smoking_Hx Occupation Gustillo_Anderson Tscherne 
+		  Abx Polytrauma Fx Nerve_Injury_Y_N Nerve_Injury Nerve_Type NT_median NT_radial_PIN NT_ulnar NT_digital NT_LABC NT_MABC NT_Other
+		  Vascular_Injury Vascular_Type Tendon_Injury Muscle_Injury OR / missing;
+	by Type_of_GSW;
+run;
+
+proc freq data=gsw;
+	table Surgery1_type Complications Flap_Coverage Laterality / missing;
+	by Type_of_GSW;
+run;
+
+*Chi square & Fisher tests*;
+proc freq data=gsw;
+	table Smoking_Hx*Type_of_GSW / chisq;
+run;
+
+proc freq data=gsw;
+	table Surgery1_type*Type_of_GSW / fisher;
+run;
+
+proc freq data=gsw;
+	table Nerve_Type *Type_of_GSW / fisher;
+run;
+
+proc freq data=gsw;
+	table Fx*Type_of_GSW / chisq;
+run;
+
+*t-tests*;
+proc ttest data=gsw;
+	class Type_of_GSW;
+	var EBL1;
+run;
+
+proc ttest data=gsw;
+	class Type_of_GSW;
+	var Duration_until_AB_;
+run;
+
+proc ttest data=gsw;
+	class Type_of_GSW;
+	var Age;
+run;
+
+***HYPOTHESES TESTING***;
+
+*1.	Does GSW velocity and demographics (age, sex, BMI, ethnicity) predict Gustilo Anderson and tscherne?*;
+
+*Exploratory analysis*;
+
+proc sort data=gsw;
+	by Velocity;
+run;
+
+*GSW velocity & age*;
+proc means data=gsw N Nmiss mean std min P25 P50 P75 max min maxdec=2;
+	var Age;
+	by Velocity;
+run;
+
+proc ttest data=gsw;
+	class Velocity;
+	var Age;
+run;
+*pooled t-test = -1.59, p-value = 0.1128 ---> not significant*;
+
+*Create the box and whisker plot*;
+proc sgplot data=gsw;
+	vbox Age / category=Velocity;
+	xaxis label='GSW Velocity';
+	yaxis label='Age';
+	title 'Box and Whisker Plot of Age by GSW Velocity';
+run;
+
+*GSW velocity & sex*;
+
+proc freq data=gsw;
+	table Sex*Velocity / chisq;
+run;
+*Chi-square = 3.0742, p-value = 0.0795---> not significant;
+
+*GSW velocity & BMI*;
+proc means data=gsw N Nmiss mean std min P25 P50 P75 max min maxdec=2;
+	var BMI;
+	by Velocity;
+run;
+
+proc ttest data=gsw;
+	class Velocity;
+	var BMI;
+run;
+*pooled t-test = -1.23, p-value = 0.2180---> not significant;
+
+*GSW velocity & ethnicity*;
+*Fisher's test needed due to low cell counts*;
+proc freq data=gsw;
+	table Ethnicity*Velocity / fisher;
+run;
+*Fisher's exact test, p-value = 0.0173---> significant;
+
+*Re-analyzing velocity & ethnicity by collapsing AA and other non-white ethnicity*
+
+*Recode*;
+data work.gsw;
+	set sas.gsw;
+	if Ethnicity = 2 then Ethnicity = 1;
+run;
+*Chi-square*;
+proc freq data=gsw;
+	table Ethnicity*Velocity / chisq;
+run;
+*Chi-square = 8.4356, p-value = 0.0037---> significant*;
+
+*Logistic regression where velocity is the outcome and gustilo-anderson and ethnicity are covariates*;
+proc logistic data=gsw;
+	class Ethnicity (ref='0') Gustillo_Anderson (ref='1');
+	model Velocity (event='1') = Gustillo_Anderson Ethnicity;
+run;
+
+*Interpretation: The likelihood ratio chi-square of 23.6306 with a p-value of <0.0001 tells us that our model 
+as a whole, is statistically significant. Meaning together Gustillo Anderson classification and ethnicity,
+significantly predict the odds of high velocity GSWs. The chi-square test statistics and associated p-values 
+shown in the Type 3 Analysis of Effects table indicate that each of the two variables in the model (Gustillo 
+Anderson & ethnicity) significantly improve the model fit (x^2=11.88 p=0.0026 & x^2=4.58 p=0.0324, respectively).
+
+Odds ratios: Patients with a Gustillo Anderson classification of 3 have approximately a 26 times increased odds 
+(OR: 25.66, 95% CI: 2.981 - 220.861) of experiencing a high velocity GSW than a patient with a Gustillo Anderson 
+classification of 1. Patients with a Gustillo Anderson classification of 2 DID NOT have a statistically significantly 
+increased odds of experiencing a high velocity GSW than a patient with a Gustillo Anderson classification of 1. 
+Non-white patients have approximately a 69% decreased odds (OR: 0.315, 95% CI: 0.110 - 0.908) of experiencing a high 
+velocity GSW than white patients.*;
+
+*Logistic regression where velocity is the outcome and tscherne and ethnicity are covariates*;
+proc logistic data=gsw;
+	class Ethnicity (ref='0') Tscherne (ref='1');
+	model Velocity (event='1') = Tscherne Ethnicity;
+run;
+*17 missing observations*;
+*Interpretation: The likelihood ratio chi-square of 21.0707 with a p-value of 0.0003 tells us that our model 
+as a whole, is statistically significant. Meaning together Tscherne classification and ethnicity, significantly 
+predict the odds of high velocity GSWs. The chi-square test statistics and associated p-values shown in the 
+Type 3 Analysis of Effects table indicate that each of the two variables in the model (Tscherne & ethnicity) 
+significantly improve the model fit (x^2=11.12 p=0.0111 & x^2=5.02 p=0.0251, respectively).
+
+Odds ratios: Patients with a Tscherne classification of 4 have approximately a 10 times increased odds (OR: 10.05, 
+95% CI: 2.465 - 40.954) of experiencing a high velocity GSW than a patient with a Tscherne classification of 1. 
+Patients with a Tscherne classification of 2 or 3 DID NOT have a statistically significantly increased odds of 
+experiencing a high velocity GSW than a patient with a Tscherne classification of 1. Non-white patients have 
+approximately a 71% decreased odds (OR: 0.295, 95% CI: 0.101 - 0.859) of experiencing a high velocity GSW than 
+white patients.*;
+
+
+*2.	Does SI GSW predict Gustilo Anderson and tscherne*;
+
+*Chi-square between SI/NSI and Gustilo Anderson*;
+proc freq data=gsw;
+	table Gustillo_Anderson*Type_of_GSW / chisq;
+run;
+*Chi-square = 20.5037, p-value = <.0001---> significant*;
+
+*Chi-square between SI/NSI and tscherne*;
+proc freq data=gsw;
+	table Tscherne*Type_of_GSW / chisq;
+run;
+*Chi-square = 12.9383, p-value = 0.0048---> significant*;
+
+
+*3.	Does GSW velocity predict surgical intervention?*;
+
+*Chi-square between GSW Velocity and surgical intervention*;
+proc freq data=gsw;
+	table OR*Velocity / chisq;
+run;
+*Chi-square = 0.7394, p-value = 0.3899---> not significant*;
+
+
+*4.	Does GSW velocity predict neurovascular damage?;
+
+*Fisher's test needed due to low cell counts*;
+proc freq data=gsw;
+	table Nerve_Injury*Velocity / fisher;
+run;
+*Fisher's exact test, p-value = 0.0024---> significant;
+
+*5. Type and number of surgery required by Gustillo Anderson and tscherne;
+
+
+*Pairwise tests between for type of surgery by Gustillo Anderson*;
+
+*First accounting for missing surgery observations*;
+data work.gsw;
+	set sas.gsw1;
+	if Surgery1_type = . then Gustillo_Anderson = .;
+run;
+
+*checking new dataset*;
+proc print data=gsw (obs=20);
+run;
+
+*running test*;
+proc freq data=gsw;
+	tables Gustillo_Anderson*Surgery1_type / chisq expected cmh;
+	title 'Pairwise Test: Type of Surgery vs. Gustilo Anderson Classification';
+run;
+
+*Pairwise test between for type of surgery by GSW velocity*;
+
+*First accounting for missing surgery observations*;
+data work.gsw;
+	set sas.gsw1;
+	if Surgery1_type = . then Velocity = .;
+run;
+
+*checking new dataset*;
+proc print data=gsw (obs=20);
+run;
+
+*running test*;
+proc freq data=gsw;
+	tables Velocity*Surgery1_type / chisq expected cmh;
+	title 'Pairwise Test: Type of Surgery vs. GSW Velocity';
+run;
