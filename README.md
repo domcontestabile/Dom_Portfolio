@@ -1,18 +1,30 @@
-# Dom Contestabile Data Portfolio
-Description: Data analysis and statistics portfolio containing past projects that demonstrate my coding abilities in SAS, SQL, & Google Sheets
+# Dom Contestabile Data Analysis Portfolio
+Description: Data and statistics portfolio containing past projects that demonstrate my analysis skills and my coding abilities in SAS & SQL
+
+# [Evaluation of Self-Inflicted vs. Non-Self-Inflicted Gunshot Wounds and Associated Injuries Involving the Hand and Upper Extremity - Retrospective Orthopedic Resident Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Gun_Shot_Wound_Analysis)
+
+Objective: To evaluate self-inflicted vs. non-self-inflicted gunshot wounds to the hand and upper extremity. The primary outcomes measured include the average number of trips to the OR, fracture pattern involved, initial management of injury, types of surgeries required, associated neurovascular damage, hand function after management via DASH and VAS scores, ability to return to work, and type of gun if available. This is a retrospective cohort analysis of patients who visited Allegheny General Hospital's Emergency Department with self-inflicted GSW to the hand or upper extremity from 1/1/2012 to 12/1/2022.  Study was submitted to MDPI's Healthcare journal for publication (acceptance is currently pending).
+
+Programming: SAS
+
+Overview:
+- Calculated descriptive statistics for all continuous and categorical variables
+- Created tables of study patient descriptive statistics
+- Performed chi-square tests, fisher's exact tests, and t-tests for primary variables and their association between types of gun shot wound velocities and types of surgeries
+- Performed two logistic regression analyses: where velocity is the outcome and gustilo-anderson (classification of open injuries into based on wound size, level of contamination, and osseous injury) and ethnicity are covariates & where velocity is the outcome and tscherne (classification of soft tissue injury associated with fracture trauma based on fracture pattern and energy involved) and ethnicity are covariates
 
 # [SAVIOR II Study: Non-invasive Vagus Nerve Stimulation (nVNS) for the Prophylaxis and Treatment of Acute Respiratory Distress Syndrome in COVID-19 Patients](https://github.com/domcontestabile/Dom_Portfolio/blob/main/SaviorII_study_statistics_code)
 
-Objective: Investigate whether non-invasive vagus nerve stimulation (nVNS) can reduce respiratory distress in COVID-19 patients, who were admitted to Allegheny General Hospital in 2020. Assess the effectiveness of nVNS in improving respiratory symptoms, reducing inflammation, and enhancing cardiopulmonary outcomes, with the goal of potentially using nVNS as a non-invasive and easy-to-administer therapy for acute respiratory distress syndrome (ARDS).
+Objective: Investigate whether non-invasive vagus nerve stimulation (nVNS) can reduce respiratory distress in COVID-19 patients, who were admitted to Allegheny General Hospital in 2020. Assess the effectiveness of nVNS in improving respiratory symptoms, reducing inflammation, and enhancing cardiopulmonary outcomes, with the goal of potentially using nVNS as a non-invasive and easy-to-administer therapy for acute respiratory distress syndrome (ARDS).  Study abstract was submitted and accepted by the MHSRS (Military Health System Research Symposium).
 
 Programming: SAS
 
 Overview:
 - Recoded new labels on already exisiting variables
-- Utilized two-sample t tests and Fisher’s exact tests to determine any significant relationships between patient treatment group and continuous and categorical variables, respectively  
-- Observed a significant difference (p<0.05) between average patient PaO2/FiO2 (or P/F) ratios and their treatment group
+- Utilized two-sample t-tests and Fisher’s exact tests to determine any significant relationships between patient treatment group and continuous and categorical variables, respectively  
+- Observed a statistically significant difference (p<0.05) between average patient PaO2/FiO2 (or P/F) ratios and their treatment group
 - Created a Table 1 of study patient descriptive statistics 
-- Created a boxplot to visually show the signifcant difference between average patient P/F ratios and their treatment group
+- Created a boxplot to visually show the difference between average patient P/F ratios and their treatment group
 
 ![PaO2 FiO2 boxplot](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/2fa605a2-a6dd-4ded-ac27-406566538869)
 
@@ -40,24 +52,13 @@ Objective: Practice the role of a data analyst and work with a real dataset (sou
 Programming: SAS
 
 Overview:
-- Re-named variables and created new variables from existing variables for analysis purposes (ex: changing age from a continuous variable into a categorical range variable)
+- Re-named and created new variables from existing variables for analysis purposes (ex: changing age from a continuous variable into a categorical range variable)
 - Calculated descriptive statistics for all continuous and categorical variables
-- Performed a chi-square test and calculated the odds ratio for the association between CDMS group and gender
+- Performed a chi-square test and calculated the odds ratio for the association between CDMS (clinically definite MS) group and gender
 - Created frequency tables and data visualizations (bar graphs)
 - Provided clear interpretations of the values produced from each data step 
 
-![Stacked bar gender bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/1f82a9b5-ca9e-47d0-9cd9-1a965fb01be8) 
-
-# [Evaluation of Self-Inflicted vs. Non-Self-Inflicted Gunshot Wounds and Associated Injuries Involving the Hand and Upper Extremity - Retrospective Orthopedic Resident Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Gun_Shot_Wound_Analysis)
-
-Objective: To evaluate self-inflicted vs. non-self-inflicted gunshot wounds to the hand and upper extremity. The primary outcomes measured include the average number of trips to the OR, fracture pattern involved, initial management of injury, types of surgeries required, associated neurovascular damage, hand function after management via DASH and VAS scores, ability to return to work, and type of gun if available. This is retrospective cohort analysis of patients who present to Allegheny General Hospital Emergency Department with self-inflicted GSW to the hand or upper extremity from 1/1/2012 to 12/1/2022.
-
-Programming: SAS
-
-Overview:
-- Calculated descriptive statistics for all continuous and categorical variables
-- Performed chi-square tests, fisher's exact tests, and t-tests for primary variables and their association between types of gun shot wound velocities and types of surgeries
-- Performed two logistic regression analyses: where velocity is the outcome and gustilo-anderson and ethnicity are covariates & where velocity is the outcome and tscherne and ethnicity are covariates
+![Stacked bar gender bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/60440849-834e-4a91-891a-11c95059da09)
 
 # [Stryker Spine Observational Trial of Clinical Outcomes following Anterior Cervical Discectomy and Fusion with Instrumentation using Allograft or Tritanium - Retrospective Patient Statistics](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Stryker_Spine_Implant_Retrospective_Study_Patients)
 
@@ -88,20 +89,9 @@ Overview:
 
 [NY Citi Bike Data Analysis Presentation - Dom Contestabile](https://secure-web.cisco.com/1LxKQHMUwWHNQ5Mq6g5YM5NfqDvSZXAyAQlF1m0WE9Ibm3rip01h-aJ-kCAo3hx7vWN4O_MMPwo1pl-ZFp0gsSVL88MRc6xIIP3gMGB4FymI4dM1IlLC4kZqpcggDjJjplbeGrx-4-J_rdY6JOEzUpWkulscQzevlFI8j9yMxVZGrM75j9OY1f0AUqp9LsKyGa3Xl-xLHmmi83R8-kjDDOVE8_eog6dhBkqyKHyesCxYtBEY0t8zuYC_YP8Gkiq9IRgcmPbe50Vd4MkWQPXMWFm4tqGV6hjtRlGn4MPCuK-FR7OwbKmkMtFy5Uom2zrCq/https%3A%2F%2Fdocs.google.com%2Fpresentation%2Fd%2F18wUVyXCMzsylhfGgkgcEazK83IBnb_4sN4fOmW1vlms%2Fedit%3Fusp%3Dsharing)
 
-# [Second-hand Vinyl Store Database Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Second_hand_Vinyl_Store_Database) 
-
-Objective: Create a hypothetical store that specializes in selling one type of thing, such as clothing or bikes. Create a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. You should sell at least 15 items, and use SELECT statements to order your items by price and show at least one statistic about the items.
-
-Programming: SQL
-
-Overview:  
-- Created a database for a second-hand vinyl store
-- Ordered the store's inventory by price in ascending order
-- Calculated the average price for each vinyl
-
 # [NBA "Player of the Week" Data Dig Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/NBA%20_Player_of_the_Week_Data_Dig)
 
-Objective: Pick a data set or create a data set, and use advanced SELECT queries to discover things about the data.
+Objective: Find an existing data set, and use advanced SELECT queries to discover things about the data.
 
 Programming: SQL
 
@@ -110,6 +100,17 @@ Overview:
 - Calculated similar statistics per category in the data using HAVING statements
 - Grouped data by transforming numerical data into categorical data for player height, weight, and age
 - Filtered the data for players that received "player of the week" early and late in their careers using AND/OR statements 
+
+# [Second-hand Vinyl Store Database Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Second_hand_Vinyl_Store_Database) 
+
+Objective: Create a hypothetical store that specializes in selling one type of thing, such as clothing or bikes. Create a table for all the items in your store, and at least 5 columns for the kind of data you think you'd need to store. You should sell at least 15 items, and use SELECT statements to order your items by price and show at least one statistic about the items.
+
+Programming: SQL
+
+Overview:  
+- Created a database for a second-hand vinyl store
+- Organized the store's inventory by price in ascending order
+- Calculated the average price for each vinyl
 
 # [Movie Actors/Actresses Joined Tables Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Movie_Actors%26Actresses_Joined_Tables)
 
