@@ -1,5 +1,5 @@
 # Dom Contestabile Data Analysis Portfolio
-Description: Data and statistics portfolio containing past projects that demonstrate my analysis skills and my coding abilities in SAS & SQL
+Description: Data and statistics portfolio containing past projects that demonstrate my analysis skills and my coding abilities in SAS, SQL, Power BI
 
 # [Evaluation of Self-Inflicted vs. Non-Self-Inflicted Gunshot Wounds and Associated Injuries Involving the Hand and Upper Extremity - Retrospective Orthopedic Resident Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Gun_Shot_Wound_Analysis)
 
