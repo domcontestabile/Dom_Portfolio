@@ -47,21 +47,6 @@ Overview:
 
 ![Data Professional Survery Breakdown](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/cc7b65c0-9d5c-48f2-867d-5a051b2aeb0c)
 
-# [SAVIOR II Study: Non-invasive Vagus Nerve Stimulation (nVNS) for the Prophylaxis and Treatment of Acute Respiratory Distress Syndrome in COVID-19 Patients](https://github.com/domcontestabile/Dom_Portfolio/blob/main/SaviorII_study_statistics_code)
-
-Objective: Investigate whether non-invasive vagus nerve stimulation (nVNS) can reduce respiratory distress in COVID-19 patients, who were admitted to Allegheny General Hospital in 2020. Assess the effectiveness of nVNS in improving respiratory symptoms, reducing inflammation, and enhancing cardiopulmonary outcomes, with the goal of potentially using nVNS as a non-invasive and easy-to-administer therapy for acute respiratory distress syndrome (ARDS).  Study abstract was submitted and accepted by the MHSRS (Military Health System Research Symposium).
-
-Data Tool: SAS
-
-Overview:
-- Recoded new labels on already exisiting variables
-- Utilized two-sample t-tests and Fisher’s exact tests to determine any significant relationships between patient treatment group and continuous and categorical variables, respectively  
-- Observed a statistically significant difference (p<0.05) between average patient PaO2/FiO2 (or P/F) ratios and their treatment group
-- Created a Table 1 of study patient descriptive statistics 
-- Created a boxplot to visually show the difference between average patient P/F ratios and their treatment group
-
-![PaO2 FiO2 boxplot](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/2fa605a2-a6dd-4ded-ac27-406566538869)
-
 # [Multiple Sclerosis (MS) Data Analysis Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/MS_Data_Analysis)
 
 Objective: Practice the role of a data analyst and work with a real dataset (sourced from Kaggle) to conduct an exploratory analysis and draw out meaningful findings.  I chose to analyze a dataset from a prospective cohort study that was conducted in Mexican patients newly diagnosed with Multiple Sclerosis (MS), who presented at the National Institute of Neurology and Neurosurgery (NINN) in Mexico City, Mexico, between 2006 and 2010.  Answer the following questions to help gain insight on certain predictor variables:
@@ -77,15 +62,6 @@ Overview:
 
 ![Stacked bar gender bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/60440849-834e-4a91-891a-11c95059da09)
 
-# [Stryker Spine Observational Trial of Clinical Outcomes following Anterior Cervical Discectomy and Fusion with Instrumentation using Allograft or Tritanium - Retrospective Patient Statistics](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Stryker_Spine_Implant_Retrospective_Study_Patients)
-
-Objective: To compare the rate of fusion success and adverse events, patients who undergo anterior cervical discectomy and fusion (ACDF) utilizing Tritanium C (Stryker Spine) will be retrospectively compared to a sample of 20 former patients. Create descriptive statistics for the 20 retrospective patients who underwent instrumented ACDF utilizing structural allograft bone with plates.
-
-Data Tool: SAS
-
-Overview:
-- Calculated descriptive statistics for the retrospective patient sample's continuous and categorical variables (continuous: age, weight, height, & BMI; categorical: sex, race, ethnicity, treated cervical index level, diagnosis, & smoking status)
-
 # [NY Citi Bike Data Analysis Project](https://secure-web.cisco.com/1wJiRYOwgAdWiqq5q-HGfiwA5vFwWywHs3tGlPaNAbGiideu-DxiMNS8Nf6r6zvrOfwy2Zlassc9bBOx_vspSUls0jlmXEPtBJaDn5g4ymP7bcDqluJ0rhDk-hrO6_GeNRoXxuswuQrXtwgvPizp24NQlPHNibirFIxc-axXJFKjXQ9GS0GClRhRgVh4U3V3A5yoIHHedujTJFN6yf_4TZCgzEblhEQsmPqOYLLauAbj1_wWuch_NaJiJC-pwdO6KJ_SQ2u4jO2whgspWzcMZp-BJX5RkyulE01bnUEbAaYZ7iCyvTeAa6BMku7WXuI7N/https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1XlpHhsr8NQSZBynY95BAMer_1cFC3vZExQeeWlrOZ6I%2Fedit%3Fusp%3Dsharing)
 
 Objective: Practice the role of a data analyst and work with a real dataset (sourced from Kaggle) to solve a hypothetical business challenge. For the purposes of this project, I chose to analyze a dataset from a bike-sharing company, known as Citi Bike. Answer the following questions to help key stakeholders to make smart, data-driven decisions based on the insights I uncover:
@@ -96,15 +72,41 @@ Objective: Practice the role of a data analyst and work with a real dataset (sou
 4. How does bike rental vary across the two user groups (one-time users vs long-term subscribers) on different days of the week?
 5. Does user age impact the average bike trip duration?
 
-Data Tool: Google Sheets
+Data Tool: Power BI & Google Sheets
 
 Overview:
 - Cleaned a NY Citi Bike dataset, removed duplicates, and handled missing data
 - Conducted an exploratory data analysis, calculated descriptive statistics, and created pivot tables in order to better understand the data
-- Created data visualizations in order to summarize and present key findings in a concise and accessible format
+- Created data visualizations with Power BI in order to summarize and present key findings in a concise and accessible format
 - Crafted a polished, professional presentation, ready to share with stakeholders
 
-[NY Citi Bike Data Analysis Presentation - Dom Contestabile](https://secure-web.cisco.com/1LxKQHMUwWHNQ5Mq6g5YM5NfqDvSZXAyAQlF1m0WE9Ibm3rip01h-aJ-kCAo3hx7vWN4O_MMPwo1pl-ZFp0gsSVL88MRc6xIIP3gMGB4FymI4dM1IlLC4kZqpcggDjJjplbeGrx-4-J_rdY6JOEzUpWkulscQzevlFI8j9yMxVZGrM75j9OY1f0AUqp9LsKyGa3Xl-xLHmmi83R8-kjDDOVE8_eog6dhBkqyKHyesCxYtBEY0t8zuYC_YP8Gkiq9IRgcmPbe50Vd4MkWQPXMWFm4tqGV6hjtRlGn4MPCuK-FR7OwbKmkMtFy5Uom2zrCq/https%3A%2F%2Fdocs.google.com%2Fpresentation%2Fd%2F18wUVyXCMzsylhfGgkgcEazK83IBnb_4sN4fOmW1vlms%2Fedit%3Fusp%3Dsharing)
+![popular pickup locations](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/5a46446b-abac-4605-b566-cd0c92728eff)
+
+[Citi Bike Data Analysis.pptx](https://github.com/domcontestabile/Dom_Portfolio/files/13922166/Citi.Bike.Data.Analysis.pptx)
+
+# [SAVIOR II Study: Non-invasive Vagus Nerve Stimulation (nVNS) for the Prophylaxis and Treatment of Acute Respiratory Distress Syndrome in COVID-19 Patients](https://github.com/domcontestabile/Dom_Portfolio/blob/main/SaviorII_study_statistics_code)
+
+Objective: Investigate whether non-invasive vagus nerve stimulation (nVNS) can reduce respiratory distress in COVID-19 patients, who were admitted to Allegheny General Hospital in 2020. Assess the effectiveness of nVNS in improving respiratory symptoms, reducing inflammation, and enhancing cardiopulmonary outcomes, with the goal of potentially using nVNS as a non-invasive and easy-to-administer therapy for acute respiratory distress syndrome (ARDS).  Study abstract was submitted and accepted by the MHSRS (Military Health System Research Symposium).
+
+Data Tool: SAS
+
+Overview:
+- Recoded new labels on already exisiting variables
+- Utilized two-sample t-tests and Fisher’s exact tests to determine any significant relationships between patient treatment group and continuous and categorical variables, respectively  
+- Observed a statistically significant difference (p<0.05) between average patient PaO2/FiO2 (or P/F) ratios and their treatment group
+- Created a Table 1 of study patient descriptive statistics 
+- Created a boxplot to visually show the difference between average patient P/F ratios and their treatment group
+
+![PaO2 FiO2 boxplot](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/2fa605a2-a6dd-4ded-ac27-406566538869)
+
+# [Stryker Spine Observational Trial of Clinical Outcomes following Anterior Cervical Discectomy and Fusion with Instrumentation using Allograft or Tritanium - Retrospective Patient Statistics](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Stryker_Spine_Implant_Retrospective_Study_Patients)
+
+Objective: To compare the rate of fusion success and adverse events, patients who undergo anterior cervical discectomy and fusion (ACDF) utilizing Tritanium C (Stryker Spine) will be retrospectively compared to a sample of 20 former patients. Create descriptive statistics for the 20 retrospective patients who underwent instrumented ACDF utilizing structural allograft bone with plates.
+
+Data Tool: SAS
+
+Overview:
+- Calculated descriptive statistics for the retrospective patient sample's continuous and categorical variables (continuous: age, weight, height, & BMI; categorical: sex, race, ethnicity, treated cervical index level, diagnosis, & smoking status)
 
 # [NBA "Player of the Week" Data Dig Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/NBA%20_Player_of_the_Week_Data_Dig)
 
