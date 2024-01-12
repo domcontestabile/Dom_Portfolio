@@ -47,6 +47,8 @@ Overview:
 
 ![Data Professional Survery Breakdown](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/cc7b65c0-9d5c-48f2-867d-5a051b2aeb0c)
 
+[Data Professional Survey Breakdown.pptx](https://github.com/domcontestabile/Dom_Portfolio/files/13923155/Data.Professional.Survey.Breakdown.pptx)
+
 # [Multiple Sclerosis (MS) Data Analysis Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/MS_Data_Analysis)
 
 Objective: Practice the role of a data analyst and work with a real dataset (sourced from Kaggle) to conduct an exploratory analysis and draw out meaningful findings.  I chose to analyze a dataset from a prospective cohort study that was conducted in Mexican patients newly diagnosed with Multiple Sclerosis (MS), who presented at the National Institute of Neurology and Neurosurgery (NINN) in Mexico City, Mexico, between 2006 and 2010.  Answer the following questions to help gain insight on certain predictor variables:
