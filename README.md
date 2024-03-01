@@ -3,7 +3,7 @@ Description: Data and statistics portfolio containing past projects that demonst
 
 # [Evaluation of Self-Inflicted vs. Non-Self-Inflicted Gunshot Wounds and Associated Injuries Involving the Hand and Upper Extremity - Retrospective Orthopedic Resident Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Gun_Shot_Wound_Analysis)
 
-Objective: To evaluate self-inflicted vs. non-self-inflicted gunshot wounds to the hand and upper extremity. The primary outcomes measured include the average number of trips to the OR, fracture pattern involved, initial management of injury, types of surgeries required, associated neurovascular damage, hand function after management via DASH and VAS scores, ability to return to work, and type of gun if available. This is a retrospective cohort analysis of patients who visited Allegheny General Hospital's Emergency Department with self-inflicted GSW to the hand or upper extremity from 1/1/2012 to 12/1/2022.  Study was submitted to MDPI's Healthcare journal for publication (acceptance is currently pending).
+Objective: To evaluate self-inflicted vs. non-self-inflicted gunshot wounds to the hand and upper extremity. The primary outcomes measured include the average number of trips to the OR, fracture pattern involved, initial management of injury, types of surgeries required, associated neurovascular damage, hand function after management via DASH and VAS scores, ability to return to work, and type of gun if available. This is a retrospective cohort analysis of patients who visited Allegheny General Hospital's Emergency Department with self-inflicted GSW to the hand or upper extremity from 1/1/2012 to 12/1/2022.  Study was published in MDPI's Healthcare journal on February 29, 2024.
 
 Data Tool: SAS
 
