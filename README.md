@@ -13,6 +13,10 @@ Overview:
 - Performed chi-square tests, fisher's exact tests, and t-tests for primary variables and their association between types of gun shot wound velocities and types of surgeries
 - Performed two logistic regression analyses: where velocity is the outcome and gustilo-anderson (classification of open injuries into based on wound size, level of contamination, and osseous injury) and ethnicity are covariates & where velocity is the outcome and tscherne (classification of soft tissue injury associated with fracture trauma based on fracture pattern and energy involved) and ethnicity are covariates
 
+![image](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/637cf54f-febe-4111-aff3-729d5bd5993c)
+
+https://doi.org/10.3390/healthcare12050564
+
 # [COVID-19 State-level Changes in Positive Cases Between States with Early and Delayed Removal of Social Distancing Restrictions in 2020 Report](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID19_State_level_Changes_during_2020)
 
 Objective: Compare the trajectory of positive cases between states that aggressively relaxed distancing restrictions in mid-May 2020 and states that delayed such measures. Assess whether there were changes in the case hospitalization rate (CHR) from early in the pandemic to later, considering potential factors such as underlying severity and/or the evolution of clinical management.
