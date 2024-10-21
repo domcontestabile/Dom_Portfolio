@@ -17,6 +17,23 @@ Overview:
 
 https://doi.org/10.3390/healthcare12050564
 
+# [COVID-19 Global Cases, Deaths, and Vaccinations: Analysis Based on WHO Data](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID%20Cases%2C%20Deaths%2C%20%26%20Vaccinations%20Analysis.sql)
+
+Objective: Apply fundamental SQL concepts, such as data retrieval, aggregations, joins, and cumulative calculations, to analyze global COVID-19 trends and vaccination progress. This analysis utilizes publicly available Excel data from the WHO's Coronavirus Dashboard, comprising about 85,000 daily disease report entries from over 200 countries. Primary variables of interest for this analysis consisted of confirmed COVID-19 cases, deaths, and vaccinations.
+
+Data Tool: SQL (SQL Server Management Studio)
+
+Skills used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
+
+Overview:
+- Retrieved data from the CovidDeaths$ and CovidVaccinations$ tables using SELECT statements, ordering by date and location for chronological clarity
+- Calculated the mortality rate as a percentage using total deaths and cases, and assessed COVID-19 prevalence in each country by comparing cases to population size
+- Identified countries with the highest infection rates and death counts, converting data types as needed for accurate analysis
+- Summed up the total number of cases, deaths, and calculated the overall global mortality rate
+- Joined data from the CovidDeaths$ and CovidVaccinations$ tables by matching location and date to analyze vaccination progress alongside death counts
+- Created a CTE to store intermediate results for calculating the percentage of vaccinated individuals by country
+- Created a temporary table to store vaccination percentages by country and a view for permanently storing vaccination data for future visualization
+
 # [COVID-19 State-level Changes in Positive Cases Between States with Early and Delayed Removal of Social Distancing Restrictions in 2020 Report](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID19_State_level_Changes_during_2020)
 
 Objective: Compare the trajectory of positive cases between states that aggressively relaxed distancing restrictions in mid-May 2020 and states that delayed such measures. Assess whether there were changes in the case hospitalization rate (CHR) from early in the pandemic to later, considering potential factors such as underlying severity and/or the evolution of clinical management.
