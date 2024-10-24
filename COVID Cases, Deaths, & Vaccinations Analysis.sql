@@ -75,9 +75,10 @@ SELECT location, MAX(cast(total_deaths AS INT)) AS total_death_count
 
 --Continents with the highest total death count:
 
-SELECT location, MAX(cast(total_deaths AS INT)) AS total_death_count
+--Taking out 'World', 'European Union', & 'International' as they are not continents, but appear in location column
+SELECT location, SUM(cast(new_deaths AS INT)) AS total_death_count
 	FROM PortfolioProject..CovidDeaths$
-	WHERE continent IS NULL
+	WHERE continent IS NULL AND location NOT IN ('World', 'European Union', 'International')
 	GROUP BY location
 	ORDER BY total_death_count DESC
 	--Results:
