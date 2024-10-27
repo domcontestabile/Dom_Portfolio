@@ -21,7 +21,7 @@ https://doi.org/10.3390/healthcare12050564
 
 Objective: Apply fundamental SQL concepts, such as data retrieval, aggregations, joins, and cumulative calculations, to analyze global COVID-19 trends and vaccination progress. This analysis utilizes publicly available Excel data from the WHO's Coronavirus Dashboard, comprising about 85,000 daily disease report entries from over 200 countries collected between 1/26/2020 - 4/30/2021. Primary variables of interest for this analysis consisted of confirmed COVID-19 cases, deaths, and vaccinations.
 
-Data Tool: SQL (SQL Server Management Studio)
+Data Tool: SQL (SQL Server Management Studio) & Tableau (Tableau Public)
 
 Skills used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
 
@@ -33,6 +33,14 @@ Overview:
 - Joined data from the CovidDeaths$ and CovidVaccinations$ tables by matching location and date to analyze vaccination progress alongside death counts
 - Created a CTE to store intermediate results for calculating the percentage of vaccinated individuals by country
 - Created a temporary table to store vaccination percentages by country and a view for permanently storing vaccination data for future visualization
+
+Visualizations Overview:
+- Created a text table to display total counts of global COVID-19 cases, deaths, and mortality rate
+- Created a vertical bar chart to highlight the total COVID-19 death counts for each major continent
+- Created an interactive world map that displays countries shaded in dark or light red depending on their average COVID-19 infection rate
+- Created a line graph that shows different countries' average COVID-19 infection rates over time along with a projected forecast after March 2021
+
+![COVID tableau dashboard screenshot](https://github.com/user-attachments/assets/2e09c73a-dac1-4555-9ec4-81532b42a53d)
 
 # [COVID-19 State-level Changes in Positive Cases Between States with Early and Delayed Removal of Social Distancing Restrictions in 2020 Report](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID19_State_level_Changes_during_2020)
 
