@@ -203,6 +203,8 @@ SELECT *, (cumulative_vaccinations/population)*100 AS vaccination_percentage
 
 --Creating View (permanent table) to store data for later visualization
 
+--Link to finished Tableau visualizations: https://public.tableau.com/app/profile/dom.contestabile/viz/COVID-19Dashboard_17298968896880/Dashboard1	
+
 CREATE VIEW PercentPopulationVaccinated AS
 	SELECT 
         CovidDeaths$.continent, 
