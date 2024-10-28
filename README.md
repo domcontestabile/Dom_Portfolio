@@ -41,6 +41,7 @@ Visualizations Overview:
 - Created a line graph that shows different countries' average COVID-19 infection rates over time along with a projected forecast after March 2021
 
 ![COVID tableau dashboard screenshot](https://github.com/user-attachments/assets/2e09c73a-dac1-4555-9ec4-81532b42a53d)
+
 https://public.tableau.com/app/profile/dom.contestabile/viz/COVID-19Dashboard_17298968896880/Dashboard1
 
 # [COVID-19 State-level Changes in Positive Cases Between States with Early and Delayed Removal of Social Distancing Restrictions in 2020 Report](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID19_State_level_Changes_during_2020)
