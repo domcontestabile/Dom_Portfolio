@@ -17,7 +17,7 @@ Overview:
 
 https://doi.org/10.3390/healthcare12050564
 
-# [COVID-19 Global Cases, Deaths, and Vaccinations: Analysis Based on WHO Data](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID%20Cases%2C%20Deaths%2C%20%26%20Vaccinations%20Analysis.sql)
+# [COVID-19 Global Cases, Deaths, & Vaccinations: Analysis Based on WHO Data](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID%20Cases%2C%20Deaths%2C%20%26%20Vaccinations%20Analysis.sql)
 
 Objective: Apply fundamental SQL concepts, such as data retrieval, aggregations, joins, and cumulative calculations, to analyze global COVID-19 trends and vaccination progress. This analysis utilizes publicly available Excel data from the WHO's Coronavirus Dashboard, comprising about 85,000 daily disease report entries from over 200 countries collected between 1/26/2020 - 4/30/2021. Primary variables of interest for this analysis consisted of confirmed COVID-19 cases, deaths, and vaccinations.
 
