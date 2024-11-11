@@ -42,7 +42,7 @@ Visualizations Overview:
 
 ![covid-19 dashboard](https://github.com/user-attachments/assets/1365ed34-df62-4d23-ba80-0406459716d3)
 
-https://public.tableau.com/app/profile/dom.contestabile/viz/COVID-19Dashboard_17298968896880/Dashboard1
+https://public.tableau.com/views/COVID-19Dashboard_17298968896880/COVID-19Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 # [COVID-19 State-level Changes in Positive Cases Between States with Early and Delayed Removal of Social Distancing Restrictions in 2020 Report](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID19_State_level_Changes_during_2020)
 
