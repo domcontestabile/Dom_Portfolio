@@ -21,7 +21,7 @@ https://doi.org/10.3390/healthcare12050564
 
 Objective: Apply fundamental SQL concepts, such as data retrieval, aggregations, joins, and cumulative calculations, to analyze global COVID-19 trends and vaccination progress. This analysis utilizes publicly available Excel data from the WHO's Coronavirus Dashboard, comprising about 85,000 daily disease report entries from over 200 countries collected between 1/26/2020 - 4/30/2021. Primary variables of interest for this analysis consisted of confirmed COVID-19 cases, deaths, and vaccinations.
 
-Data Tool: SQL (SQL Server Management Studio) & Tableau (Tableau Public)
+Data Tool: SQL (SQL Server Management Studio) & Tableau
 
 Skills used: Joins, CTE's, Temp Tables, Windows Functions, Aggregate Functions, Creating Views, Converting Data Types
 
@@ -61,6 +61,24 @@ Overview:
 
 [Final Report - Dom Contestabile.docx](https://github.com/domcontestabile/Dom_Portfolio/files/11547336/Final.Report.-.Dom.Contestabile.docx)
 
+# [HR Attrition Analytics Dashboard](https://public.tableau.com/views/HRAnalyticsDashboard_17312756291600/HRAnalyticsDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+Objective: Conduct a comprehensive analysis of an employee attrition dataset (sourced from Kaggle), culminating in the development of an interactive dashboard featuring insightful visualizations to identify key attrition trends. 
+
+Data Tool: Tableau
+
+Overview:
+- Created a banner to display key performance indicators (KPIs), including employee count, attrition count, attrition rate, active employees, and average employee age.
+- Designed a gender-based lollipop chart to compare attrition by employee sex.
+- Developed a pie chart showing the distribution of departing employees across departments: HR, R&D, and Sales.
+- Built an interactive vertical bar chart to display employee counts within selected age bins, allowing users to adjust bin sizes using a parameter control.
+- Created a heat map to visualize job satisfaction scores by job role.
+- Added a horizontal bar chart to highlight attrition differences based on employees’ fields of study.
+- Produced multiple donut charts illustrating attrition rates across various age groups.
+- Implemented an education filter to allow users to view all dashboard visualizations based on employee education levels.
+
+![hr dashboard](https://github.com/user-attachments/assets/27fcdbe5-55ce-445d-a4d0-e8a23c53fa7e)
+
 # [Data Professional Survey Breakdown](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Data%20Professional%20Survey%20Breakdown.pptx)
 
 Objective: Generate helpful insights from a survey (sourced from Alex Freberg) administered to over 600 data professionals, who are subscribed to Alex's Youtube channel, "Alex the Analyst".  Use Power BI to create multiple interactive data visualizations that simplify the data collected from the survery into appropriate topics, such as salary, favorite programming language, and work/life balance satisfaction.
@@ -82,7 +100,7 @@ Overview:
 
 # [Multiple Sclerosis (MS) Data Analysis Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/MS_Data_Analysis)
 
-Objective: Practice the role of a data analyst and work with a real dataset (sourced from Kaggle) to conduct an exploratory analysis and draw out meaningful findings.  I chose to analyze a dataset from a prospective cohort study that was conducted in Mexican patients newly diagnosed with Multiple Sclerosis (MS), who presented at the National Institute of Neurology and Neurosurgery (NINN) in Mexico City, Mexico, between 2006 and 2010.  Answer the following questions to help gain insight on certain predictor variables:
+Objective: Work with a real dataset (sourced from Kaggle) to conduct an exploratory analysis and draw out meaningful findings.  I chose to analyze a dataset from a prospective cohort study that was conducted in Mexican patients newly diagnosed with Multiple Sclerosis (MS), who presented at the National Institute of Neurology and Neurosurgery (NINN) in Mexico City, Mexico, between 2006 and 2010.  Answer the following questions to help gain insight on certain predictor variables:
 
 Data Tool: SAS
 
