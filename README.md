@@ -40,7 +40,7 @@ Visualizations Overview:
 - Created an interactive world map that displays countries shaded in dark or light red depending on their average COVID-19 infection rate
 - Created a line graph that shows different countries' average COVID-19 infection rates over time along with a projected forecast after March 2021
 
-![COVID tableau dashboard screenshot](https://github.com/user-attachments/assets/2e09c73a-dac1-4555-9ec4-81532b42a53d)
+![covid-19 dashboard](https://github.com/user-attachments/assets/1365ed34-df62-4d23-ba80-0406459716d3)
 
 https://public.tableau.com/app/profile/dom.contestabile/viz/COVID-19Dashboard_17298968896880/Dashboard1
 
