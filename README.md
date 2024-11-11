@@ -79,6 +79,8 @@ Overview:
 
 ![hr dashboard](https://github.com/user-attachments/assets/27fcdbe5-55ce-445d-a4d0-e8a23c53fa7e)
 
+https://public.tableau.com/views/HRAnalyticsDashboard_17312756291600/HRAnalyticsDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
 # [Data Professional Survey Breakdown](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Data%20Professional%20Survey%20Breakdown.pptx)
 
 Objective: Generate helpful insights from a survey (sourced from Alex Freberg) administered to over 600 data professionals, who are subscribed to Alex's Youtube channel, "Alex the Analyst".  Use Power BI to create multiple interactive data visualizations that simplify the data collected from the survery into appropriate topics, such as salary, favorite programming language, and work/life balance satisfaction.
