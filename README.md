@@ -81,6 +81,21 @@ Overview:
 
 https://public.tableau.com/views/HRAnalyticsDashboard_17312756291600/HRAnalyticsDashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
+# [Multiple Sclerosis (MS) Data Analysis Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/MS_Data_Analysis)
+
+Objective: Work with a real dataset (sourced from Kaggle) to conduct an exploratory analysis and draw out meaningful findings.  I chose to analyze a dataset from a prospective cohort study that was conducted in Mexican patients newly diagnosed with Multiple Sclerosis (MS), who presented at the National Institute of Neurology and Neurosurgery (NINN) in Mexico City, Mexico, between 2006 and 2010.  Answer the following questions to help gain insight on certain predictor variables:
+
+Data Tool: SAS
+
+Overview:
+- Re-named and created new variables from existing variables for analysis purposes (ex: changing age from a continuous variable into a categorical range variable)
+- Calculated descriptive statistics for all continuous and categorical variables
+- Performed a chi-square test and calculated the odds ratio for the association between CDMS (clinically definite MS) group and gender
+- Created frequency tables and data visualizations (bar graphs)
+- Provided clear interpretations of the values produced from each data step 
+
+![Stacked bar gender bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/60440849-834e-4a91-891a-11c95059da09)
+
 # [Data Professional Survey Breakdown](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Data%20Professional%20Survey%20Breakdown.pptx)
 
 Objective: Generate helpful insights from a survey (sourced from Alex Freberg) administered to over 600 data professionals, who are subscribed to Alex's Youtube channel, "Alex the Analyst".  Use Power BI to create multiple interactive data visualizations that simplify the data collected from the survery into appropriate topics, such as salary, favorite programming language, and work/life balance satisfaction.
@@ -99,21 +114,6 @@ Overview:
 ![Data Professional Survery Breakdown](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/cc7b65c0-9d5c-48f2-867d-5a051b2aeb0c)
 
 [Data Professional Survey Breakdown.pptx](https://github.com/domcontestabile/Dom_Portfolio/files/13923155/Data.Professional.Survey.Breakdown.pptx)
-
-# [Multiple Sclerosis (MS) Data Analysis Project](https://github.com/domcontestabile/Dom_Portfolio/blob/main/MS_Data_Analysis)
-
-Objective: Work with a real dataset (sourced from Kaggle) to conduct an exploratory analysis and draw out meaningful findings.  I chose to analyze a dataset from a prospective cohort study that was conducted in Mexican patients newly diagnosed with Multiple Sclerosis (MS), who presented at the National Institute of Neurology and Neurosurgery (NINN) in Mexico City, Mexico, between 2006 and 2010.  Answer the following questions to help gain insight on certain predictor variables:
-
-Data Tool: SAS
-
-Overview:
-- Re-named and created new variables from existing variables for analysis purposes (ex: changing age from a continuous variable into a categorical range variable)
-- Calculated descriptive statistics for all continuous and categorical variables
-- Performed a chi-square test and calculated the odds ratio for the association between CDMS (clinically definite MS) group and gender
-- Created frequency tables and data visualizations (bar graphs)
-- Provided clear interpretations of the values produced from each data step 
-
-![Stacked bar gender bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/60440849-834e-4a91-891a-11c95059da09)
 
 # [NY Citi Bike Data Analysis Project](https://secure-web.cisco.com/1wJiRYOwgAdWiqq5q-HGfiwA5vFwWywHs3tGlPaNAbGiideu-DxiMNS8Nf6r6zvrOfwy2Zlassc9bBOx_vspSUls0jlmXEPtBJaDn5g4ymP7bcDqluJ0rhDk-hrO6_GeNRoXxuswuQrXtwgvPizp24NQlPHNibirFIxc-axXJFKjXQ9GS0GClRhRgVh4U3V3A5yoIHHedujTJFN6yf_4TZCgzEblhEQsmPqOYLLauAbj1_wWuch_NaJiJC-pwdO6KJ_SQ2u4jO2whgspWzcMZp-BJX5RkyulE01bnUEbAaYZ7iCyvTeAa6BMku7WXuI7N/https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1XlpHhsr8NQSZBynY95BAMer_1cFC3vZExQeeWlrOZ6I%2Fedit%3Fusp%3Dsharing)
 
