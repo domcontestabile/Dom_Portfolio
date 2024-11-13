@@ -96,6 +96,27 @@ Overview:
 
 ![Stacked bar gender bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/60440849-834e-4a91-891a-11c95059da09)
 
+# [Customer Revenue Analytics](https://public.tableau.com/views/CustomerRevenueAnalytics/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+Objective: Design a customer analysis dashboard with Kaggle-sourced data on business revenue trends from October 2020 to September 2021. 
+
+Data Tool: Tableau
+
+Overview:
+- Emphasized the primary KPI by prominently displaying total revenue in the upper-right corner
+- Created an interactive U.S. map with labeled color density to show revenue generated in each state
+- Developed a butterfly chart to compare customer revenue by gender, further segmented by product category
+- Designed a donut chart to illustrate total revenue across different U.S. regions
+- Built a vertical bar chart to show total revenue across specified age bins
+- Produced a line graph to illustrate monthly revenue trends from October 2020 to September 2021
+- Designed a scatterplot to visualize the correlation between the quantity of ordered products and discount percentage
+- Implemented a category filter allowing users to view visualizations by product category
+- Added filters within each visualization for detailed metric exploration based on selected variables
+
+![final sales dashboard](https://github.com/user-attachments/assets/068e2dd0-bbbe-45e4-9784-b2b713445bd9)
+
+https://public.tableau.com/views/CustomerRevenueAnalytics/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
 # [Data Professional Survey Breakdown](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Data%20Professional%20Survey%20Breakdown.pptx)
 
 Objective: Generate helpful insights from a survey (sourced from Alex Freberg) administered to over 600 data professionals, who are subscribed to Alex's Youtube channel, "Alex the Analyst".  Use Power BI to create multiple interactive data visualizations that simplify the data collected from the survery into appropriate topics, such as salary, favorite programming language, and work/life balance satisfaction.
