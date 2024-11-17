@@ -42,7 +42,7 @@ Visualizations Overview:
 
 ![covid-19 dashboard](https://github.com/user-attachments/assets/1365ed34-df62-4d23-ba80-0406459716d3)
 
-https://public.tableau.com/views/COVID-19Dashboard_17298968896880/COVID-19Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+https://public.tableau.com/views/COVID-19WHODataDashboard/COVID-19Dashboard?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 # [COVID-19 State-level Changes in Positive Cases Between States with Early and Delayed Removal of Social Distancing Restrictions in 2020 Report](https://github.com/domcontestabile/Dom_Portfolio/blob/main/COVID19_State_level_Changes_during_2020)
 
@@ -96,9 +96,9 @@ Overview:
 
 ![Stacked bar gender bar graph](https://github.com/domcontestabile/Dom_Portfolio/assets/134414164/60440849-834e-4a91-891a-11c95059da09)
 
-# [Customer Revenue Analytics](https://public.tableau.com/views/CustomerRevenueAnalytics/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+# [Customer Revenue Analysis Dashboard: Insights from 2020–2021](https://public.tableau.com/views/CustomerRevenueAnalysisDashboardInsightsfrom20202021/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-Objective: Design a customer analysis dashboard with Kaggle-sourced data on business revenue trends from October 2020 to September 2021. 
+Objective: Develop an interactive dashboard using Kaggle-sourced data to analyze customer revenue trends from October 2020 to September 2021. 
 
 Data Tool: Tableau
 
@@ -115,7 +115,25 @@ Overview:
 
 ![final sales dashboard](https://github.com/user-attachments/assets/068e2dd0-bbbe-45e4-9784-b2b713445bd9)
 
-https://public.tableau.com/views/CustomerRevenueAnalytics/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+https://public.tableau.com/views/CustomerRevenueAnalysisDashboardInsightsfrom20202021/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
+# [Netflix Content Analysis Dashboard: Movies and TV Shows (2008–2020)](https://public.tableau.com/views/NetflixContentAnalysisDashboardMoviesandTVShows20082020/NetflixContentAnalysisDashboardMoviesandTVShows20082020?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+Objective: Design an interactive dashboard based on publicly available Netflix data to analyze key characteristics of movies and TV shows released on the platform between 2008 and 2020. The dashboard provides insights into content distribution by genre, release year, ratings, and country of origin, highlighting trends and patterns in streaming service offerings. Interactive filters allow users to explore individual titles and their details, such as descriptions, release dates, and duration, offering a comprehensive view of Netflix's content evolution over time.
+
+Data Tool: Tableau
+
+Overview:
+- Created an interactive international map using color density to display the total number of new movies and TV shows released on Netflix from each country
+-	Developed an area line chart for side-by-side comparisons of the number of movies and TV shows released on Netflix over time
+-	Designed a horizontal bar chart to visualize the total number of movies and TV shows by genre
+-	Built a vertical bar chart to display the total count of movies and TV shows categorized by ratings
+-	Created a packed bubble chart to highlight differences in content distribution, showing total counts and percentages for movies and TV shows
+-	Implemented filters allowing users to select any individual movie or TV show used within this analysis to view detailed information, including description, date added to Netflix, duration, rating, release year, and genre
+
+![final netflix dashboard](https://github.com/user-attachments/assets/b00d48d5-e301-42a2-b628-72b9c08fac82)
+
+https://public.tableau.com/views/NetflixContentAnalysisDashboardMoviesandTVShows20082020/NetflixContentAnalysisDashboardMoviesandTVShows20082020?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
 # [Data Professional Survey Breakdown](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Data%20Professional%20Survey%20Breakdown.pptx)
 
