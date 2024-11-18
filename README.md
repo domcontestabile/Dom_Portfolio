@@ -135,6 +135,22 @@ Overview:
 
 https://public.tableau.com/views/NetflixContentAnalysisDashboardMoviesandTVShows20082020/NetflixContentAnalysisDashboardMoviesandTVShows20082020?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
 
+# [IMDb Top 1000 Movies & TV Shows Dashboard Analysis](https://public.tableau.com/views/IMDbTop1000MoviesTVShowsDashboardAnalysis/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
+Objective: Develop an interactive data visualization dashboard to analyze key characteristics of the top 1000 IMDb-rated movies and TV shows (Kaggle dataset) released between 1920 and 2020.
+
+Data Tool: Tableau
+
+Overview: 
+-	Developed horizontal bar charts visualizing the top 10 IMDb movies by vote count and the distribution of films across major certification categories
+-	Constructed area line charts illustrating the number of IMDb top 1000 films released between 1920 and 2020 and their cumulative gross revenue over time
+-	Generated box-and-whisker plots comparing the average IMDb and Metacritic ratings across the top 10 film and TV show genres
+-	Implemented interactive filters enabling users to access detailed information for individual movies and TV shows, including description, genre, year, IMDb rating, Metacritic score, runtime, vote count, gross revenue, and starring cast
+
+![final IMDb dashboard](https://github.com/user-attachments/assets/cdd044a8-ef64-4878-85ff-56c6678b6d5b)
+
+https://public.tableau.com/views/IMDbTop1000MoviesTVShowsDashboardAnalysis/Dashboard1?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link
+
 # [Data Professional Survey Breakdown](https://github.com/domcontestabile/Dom_Portfolio/blob/main/Data%20Professional%20Survey%20Breakdown.pptx)
 
 Objective: Generate helpful insights from a survey (sourced from Alex Freberg) administered to over 600 data professionals, who are subscribed to Alex's Youtube channel, "Alex the Analyst".  Use Power BI to create multiple interactive data visualizations that simplify the data collected from the survery into appropriate topics, such as salary, favorite programming language, and work/life balance satisfaction.
