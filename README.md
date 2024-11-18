@@ -119,7 +119,7 @@ https://public.tableau.com/views/CustomerRevenueAnalysisDashboardInsightsfrom202
 
 # [Netflix Content Analysis Dashboard: Movies and TV Shows (2008–2020)](https://public.tableau.com/views/NetflixContentAnalysisDashboardMoviesandTVShows20082020/NetflixContentAnalysisDashboardMoviesandTVShows20082020?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-Objective: Design an interactive dashboard based on publicly available Netflix data to analyze key characteristics of movies and TV shows released on the platform between 2008 and 2020. The dashboard provides insights into content distribution by genre, release year, ratings, and country of origin, highlighting trends and patterns in streaming service offerings. Interactive filters allow users to explore individual titles and their details, such as descriptions, release dates, and duration, offering a comprehensive view of Netflix's content evolution over time.
+Objective: Design an interactive dashboard based on publicly available Netflix data to analyze key characteristics of movies and TV shows released on the platform between 2008 and 2020. 
 
 Data Tool: Tableau
 
